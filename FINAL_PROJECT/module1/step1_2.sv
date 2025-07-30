@@ -36,10 +36,6 @@ module step1_2 (
     );
 
     always_ff @(posedge clk or negedge rst) begin
-        step2_add_en <= valid;
-        step2_sub_en <= step2_add_en;
-        step2_mul_en <= step2_add_en || step2_sub_en;
-        cbfp_valid <= step2_mul_en;
         if (~rst) begin
             for(i = 0; i < 16; i++) begin
                 add_sub_step12_re[i] <= 0;
@@ -51,6 +47,10 @@ module step1_2 (
             step2_sub_en <= 0;
             step2_mul_en <= 0;  
         end else begin
+            step2_add_en <= valid;
+            step2_sub_en <= step2_add_en;
+            step2_mul_en <= step2_add_en || step2_sub_en;
+            cbfp_valid <= step2_mul_en;
             if(step2_add_en) begin
                 for(i = 0; i < 16; i++) begin
                     bfly12_re_n_16_reg[i] <= bfly11_re_n[i];
