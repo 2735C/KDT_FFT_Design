@@ -9,8 +9,8 @@ module step1_2 (
     input logic signed [14:0] bfly11_im_p [0:15],
     input logic signed [14:0] bfly11_im_n [0:15],
 
-    output logic signed [24:0] bfly12_re [0:15],
-    output logic signed [24:0] bfly12_im [0:15],
+    output logic signed [25:0] bfly12_re [0:15],
+    output logic signed [25:0] bfly12_im [0:15],
     output logic               cbfp_valid
 );
 
@@ -24,8 +24,8 @@ module step1_2 (
     logic signed [8:0] m1_twf_r [0:15];
     logic signed [8:0] m1_twf_i [0:15];
 
-    logic signed [16:0] bfly12_re_n_16_reg [0:15];
-    logic signed [16:0] bfly12_im_n_16_reg [0:15];
+    logic signed [14:0] bfly12_re_n_16_reg [0:15];
+    logic signed [14:0] bfly12_im_n_16_reg [0:15];
 
     twf64 TWF64 (
         .clk(clk),
