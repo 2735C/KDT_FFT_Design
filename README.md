@@ -69,3 +69,61 @@
 
 ## 개발 과정
 > 더 많은 내용을 확인하고 싶으면 --> [[발표 자료]](/History/PPT/Team2_발표자료.pdf)
+
+
+🔥🔥🔥🔥 디버깅 과정은 Trouble 슈팅 칸 만들거니까 개발 과정에는 결론만 적어주셈 🔥🔥🔥🔥
+
+## (1) Fixed point modeling
+
+### 
+
+Fixed, float 개념부터 foarmat 관련 이야기랑 matlab 시행착오 등등 적으면 될 듯
+
+## (2) RTL Simulation
+
+### Butterfly Calculation
+
+#### step 0
+    step마다 각각 twiddle factor가 다르니까 format이랑 연산 방법 등에 대해 소개하던가 코드 부분 발췌해서 설명하던가(허수 실수 교차 되는 거 등등)
+
+#### step 1
+
+#### step 2
+
+### CBFP
+무념무상
+
+### 시뮬 사진 
+
+## (3) Synthesis
+
+합성 결과 사진 첨부 이건 제가 파일 zip 해제 안 해도 돼서 제가 넣을게요
+
+
+## (4) Gate Simulation
+
+### Testbench Code 핵심 첨부 및 설명
+
+### 시뮬 사진
+
+
+
+## (5) FPGA Targeting
+
+### Vivado
+
+#### vio 연결 설정이랑 xdc 설정 관해서 언급, 결과 적기 
+
+
+
+
+## 🚀Trouble Shooting 
+[⚒️[Timing Miss Match Trouble]](/trouble_shooting/Trouble_Shooting.md)   <br>
+[⚒️[Random Input Trouble]](/trouble_shooting/Trouble_Shooting1.md)  <br>
+[⚒️[Clock-gate Latch]](/trouble_shooting/Trouble_Shooting2.md) <br>
+[⚒️[Indexsum Problem]](/trouble_shooting/Trouble_Shooting3.md) <br>
+[⚒️[Vivado Synthesis Error]](/trouble_shooting/Trouble_Shooting4.md)       <br>
+[⚒️[GateSim Trouble]](/trouble_shooting/Trouble_Shooting5.md)       <br>
+[⚒️[FPGA SetUp Trouble]](/trouble_shooting/Trouble_Shooting6.md)      <br>
+[⚒️[더 작성할 내용 있으면 추가]](/trouble_shooting/Trouble_Shooting7.md)      <br>
+
