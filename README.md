@@ -122,12 +122,12 @@ vio 연결 설정이랑 xdc 설정 관해서 언급 및 사진, 결과 적기
 
 
 ## 🚀Trouble Shooting 
-[⚒️[Timing Miss Match Trouble]](/History/trouble_shooting/Trouble_Shooting.md)   <br>
-[⚒️[Random Input Trouble]](/History/trouble_shooting/Trouble_Shooting1.md)  <br>
-[⚒️[Clock-gate Latch]](/History/trouble_shooting/Trouble_Shooting2.md) <br>
-[⚒️[Indexsum Problem]](/History/trouble_shooting/Trouble_Shooting3.md) <br>
-[⚒️[Vivado Synthesis Error]](/History/trouble_shooting/Trouble_Shooting4.md)       <br>
-[⚒️[GateSim Trouble]](/History/trouble_shooting/Trouble_Shooting5.md)       <br>
-[⚒️[FPGA SetUp Trouble]](/History/trouble_shooting/Trouble_Shooting6.md)      <br>
-[⚒️[더 작성할 내용 있으면 추가]](/History/trouble_shooting/Trouble_Shooting7.md)      <br>
+[⚒️[Timing Miss Match Trouble]](/History/trouble_shooting/Trouble_Shooting1.md)   <br>
+[⚒️[Random Input Trouble]](/History/trouble_shooting/Trouble_Shooting2.md)  <br>
+[⚒️[Clock-gate Latch]](/History/trouble_shooting/Trouble_Shooting3.md) <br>
+[⚒️[Indexsum Problem]](/History/trouble_shooting/Trouble_Shooting4.md) <br>
+[⚒️[Vivado Synthesis Error]](/History/trouble_shooting/Trouble_Shooting5.md)       <br>
+[⚒️[GateSim Trouble]](/History/trouble_shooting/Trouble_Shooting6.md)       <br>
+[⚒️[FPGA SetUp Trouble]](/History/trouble_shooting/Trouble_Shooting7.md)      <br>
+[⚒️[더 작성할 내용 있으면 추가]](/History/trouble_shooting/Trouble_Shooting8.md)      <br>
 
