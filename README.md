@@ -84,16 +84,18 @@ Fixed, float 개념부터 foarmat 관련 이야기랑 matlab 시행착오 등등
 ### Butterfly Calculation
 
 #### step 0
-    step마다 각각 twiddle factor가 다르니까 format이랑 연산 방법 등에 대해 소개하던가 코드 부분 발췌해서 설명하던가(허수 실수 교차 되는 거 등등)
+step마다 각각 twiddle factor가 다르니까 format이랑 연산 방법 등에 대해 소개하던가 코드 부분 발췌해서 설명하던가(허수 실수 교차 되는 거 등등)
 
 #### step 1
+솰라솰라
 
 #### step 2
-
+솰라솰라
 ### CBFP
-무념무상
+솰라솰라
 
 ### 시뮬 사진 
+아무 생각이 없다
 
 ## (3) Synthesis
 
@@ -103,27 +105,29 @@ Fixed, float 개념부터 foarmat 관련 이야기랑 matlab 시행착오 등등
 ## (4) Gate Simulation
 
 ### Testbench Code 핵심 첨부 및 설명
+솰라솰라
+
 
 ### 시뮬 사진
 
-
+이미지 
 
 ## (5) FPGA Targeting
 
 ### Vivado
 
-#### vio 연결 설정이랑 xdc 설정 관해서 언급, 결과 적기 
+vio 연결 설정이랑 xdc 설정 관해서 언급 및 사진, 결과 적기 
 
 
 
 
 ## 🚀Trouble Shooting 
-[⚒️[Timing Miss Match Trouble]](/trouble_shooting/Trouble_Shooting.md)   <br>
-[⚒️[Random Input Trouble]](/trouble_shooting/Trouble_Shooting1.md)  <br>
-[⚒️[Clock-gate Latch]](/trouble_shooting/Trouble_Shooting2.md) <br>
-[⚒️[Indexsum Problem]](/trouble_shooting/Trouble_Shooting3.md) <br>
-[⚒️[Vivado Synthesis Error]](/trouble_shooting/Trouble_Shooting4.md)       <br>
-[⚒️[GateSim Trouble]](/trouble_shooting/Trouble_Shooting5.md)       <br>
-[⚒️[FPGA SetUp Trouble]](/trouble_shooting/Trouble_Shooting6.md)      <br>
-[⚒️[더 작성할 내용 있으면 추가]](/trouble_shooting/Trouble_Shooting7.md)      <br>
+[⚒️[Timing Miss Match Trouble]](/History/trouble_shooting/Trouble_Shooting.md)   <br>
+[⚒️[Random Input Trouble]](/History/trouble_shooting/Trouble_Shooting1.md)  <br>
+[⚒️[Clock-gate Latch]](/History/trouble_shooting/Trouble_Shooting2.md) <br>
+[⚒️[Indexsum Problem]](/History/trouble_shooting/Trouble_Shooting3.md) <br>
+[⚒️[Vivado Synthesis Error]](/History/trouble_shooting/Trouble_Shooting4.md)       <br>
+[⚒️[GateSim Trouble]](/History/trouble_shooting/Trouble_Shooting5.md)       <br>
+[⚒️[FPGA SetUp Trouble]](/History/trouble_shooting/Trouble_Shooting6.md)      <br>
+[⚒️[더 작성할 내용 있으면 추가]](/History/trouble_shooting/Trouble_Shooting7.md)      <br>
 
