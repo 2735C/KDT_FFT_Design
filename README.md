@@ -102,7 +102,7 @@ step마다 각각 twiddle factor가 다르니까 format이랑 연산 방법 등�
 #### step 2
 솰라솰라
 ### CBFP
-솰라솰라
+솰라솰라<br> 
 
 ### 시뮬 사진 
 아무 생각이 없다
