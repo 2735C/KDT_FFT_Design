@@ -40,7 +40,8 @@
 
 ## 🚀프로젝트 개요
 **FFT란?** <br>
-어쩌구 저쩌구 <br>
+<img width="1551" height="761" alt="image" src="https://github.com/user-attachments/assets/a09e11f8-483d-4b9a-be05-764e73d76ca3" />
+ <br>
 
 ### 🧐문제 인식
 **HW 설계가 더 적합한 이유**
