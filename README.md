@@ -40,7 +40,8 @@
 
 ## 🚀프로젝트 개요
 **FFT란?** <br>
-<img width="1551" height="761" alt="image" src="https://github.com/user-attachments/assets/a09e11f8-483d-4b9a-be05-764e73d76ca3" />
+<img width="1551" height="761" alt="image" src="https://github.com/user-attachments/assets/a09e11f8-483d-4b9a-be05-764e73d76ca3" /> |
+--|
 그림과 같이 시간 도메인의 함수를 주파수 도메인 함수로 변환하는것을 푸리에 변환이라고 합니다.
 
 하지만 이산적인(무한하지 않은) 영역에서 DFT(이산 푸리에 변환)은 샘플링 수에 따라 기하 급수적으로 연산양이 커지게 됩니다.
