@@ -40,7 +40,7 @@
 
 ## 🚀프로젝트 개요
 **FFT란?** <br>
-<img width="1551" height="761" alt="image" src="https://github.com/user-attachments/assets/a09e11f8-483d-4b9a-be05-764e73d76ca3" /> |
+<img width="800" alt="image" src="https://github.com/user-attachments/assets/a09e11f8-483d-4b9a-be05-764e73d76ca3" /> |
 --|
 
 - 그림과 같이 시간 도메인의 함수를 주파수 도메인 함수로 변환하는것을 푸리에 변환이라고 합니다.
