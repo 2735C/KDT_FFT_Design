@@ -137,6 +137,8 @@ step마다 각각 twiddle factor가 다르니까 format이랑 연산 방법 등�
 ## (5) FPGA Targeting
 ### Top Module Schematic
 <img src="/History/img/img1.png" width=1000>
+
+### Elaborated Design
 <img src="/History/img/img2.png" width=1000>
 ### Vivado
 
