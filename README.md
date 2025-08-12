@@ -137,9 +137,13 @@ step마다 각각 twiddle factor가 다르니까 format이랑 연산 방법 등�
 ## (5) FPGA Targeting
 ### Top Module Schematic
 <img src="/History/img/img1.png" width=1000>
+설계한 각 Module들을 연결하여 만들 최종 Top Module은 다음과 같다.
+
 
 ### Elaborated Design
 <img src="/History/img/img2.png" width=1000>
+Top Module Schematic을 바탕으로 Module들을 Wiring하고, Vivado로 만든 Design은 다음과 같다.
+
 ### Vivado
 
 - vio 연결 설정이랑 xdc 설정 관해서 언급 및 사진, 결과 적기 
