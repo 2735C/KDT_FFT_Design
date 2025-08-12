@@ -146,9 +146,11 @@ Top Module Schematic을 바탕으로 Module들을 Wiring하고, Vivado로 만든
 
 ### Vivado
 
-|<img src="/History/img/img70.png" width=150 height=150>| <img src="/History/img/img71.png" width=150 height=150>|
+* Clocking Wizard
+
+|<img src="/History/img/img70.png" width=500 >| <img src="/History/img/img71.png" width=500 >|
 --|--
-|<img src="/History/img/img72.png" width=150 height=150>| <img src="/History/img/img73.png" width=150 height=150>|
+|<img src="/History/img/img72.png" width=500>| <img src="/History/img/img73.png" width=500>|
 
 - vio 연결 설정이랑 xdc 설정 관해서 언급 및 사진, 결과 적기 
 
