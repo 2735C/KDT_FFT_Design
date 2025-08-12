@@ -135,7 +135,7 @@ step마다 각각 twiddle factor가 다르니까 format이랑 연산 방법 등�
 이미지 
 
 ## (5) FPGA Targeting
-<img src="/History/img/img1.png" width=150 height=150>
+<img src="/History/img/img1.png" width=1000>
 ### Vivado
 
 - vio 연결 설정이랑 xdc 설정 관해서 언급 및 사진, 결과 적기 
