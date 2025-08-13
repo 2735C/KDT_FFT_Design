@@ -114,7 +114,7 @@ Butterfly Calculation을 clk당 16개의 데이터 처리로 해결하기에는 
 각 모듈의 step0는 매 클럭마다 16개의 입력값을 병렬로 연산한다
 연산은 2단구조: Add/Sub enable 신호와 Mulenable신호로 제어한다.
 
-#### |step0_0 Add/Sub 단계|                        |step1_0 Add/Sub 단계|
+#### step0_0 Add/Sub 단계&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     step1_0 Add/Sub 단계
 
 <img src="/History/img/img30.png" width=400> <img src="/History/img/img32.png" width=400>
 
