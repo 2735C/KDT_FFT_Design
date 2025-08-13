@@ -220,7 +220,7 @@ Top Module Schematic을 바탕으로 Module들을 Wiring하였고, Vivado로 만
 
 - Clocking_Wizard (Clk_Wiz_0)
 
-<img src="/History/img/img50.png" width=100> <img src="/History/img/img51.png" width=100>
+<img src="/History/img/img50.png" width=200> <img src="/History/img/img51.png" width=200>
 <img src="/History/img/img52.png" width=600>
 
 FPGA에서 사용할 보드는 Avnet-Tria UltraZed-7EV Carrier Card로, System Clock이 300MHz이다.
