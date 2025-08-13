@@ -337,9 +337,9 @@ Latency = (915ns - 30ns) / clk_period = 88.5clk => 89clk <br>
 
 - 결과 비교
 
-<img src="/History/img/img68.png" width=500> <img src="/History/img/img69.png" width=500>
+<img src="/History/img/img68.png" width=400> <img src="/History/img/img69.png" width=400>
 
-<img src="/History/img/img150.png" width=500> <img src="/History/img/img151.png" width=500>
+<img src="/History/img/img150.png" width=400> <img src="/History/img/img151.png" width=400>
 
 
 ## 🚀Trouble Shooting 
