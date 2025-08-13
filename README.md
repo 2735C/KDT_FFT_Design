@@ -203,7 +203,7 @@ step0_2 Mul 단계| step1_2 Mul 단계
 
 Timing_max|Timing_min| Area
 --|--|--
-<img src="/History/img/img70.png" width=500>| <img src="/History/img/img71.png" width=500>| <img src="/History/img/img72.png" width=500>
+|<img src="/History/img/img70.png" width=500>| <img src="/History/img/img71.png" width=500>| <img src="/History/img/img72.png" width=500>|
 
 > Hold time은 Layout 단계에서 충분히 해결 가능하므로 front-end 과정에서는 Setup time과 Area 최적화에 집중하였다.
 
