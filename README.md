@@ -128,6 +128,18 @@ Butterfly Calculation을 clk당 16개의 데이터 처리로 해결하기에는 
 add/sub 연산 후 mul 계산 시작
 전반 8clk은 그대로 출력(twddile factor = 1),후반 8clk은 sub연산 결과의 Re↔Im 교차(twiddle factor = j)
 
+### step1_0 Add/Sub 단계
+
+<img src="/History/img/img32.png" width=400>
+
+step0_0과 구조는 동일하되 연산 수행 주기가 달라짐(저장 2clk, 연산 2clk 총 8번 반복: 총 32clk 소요)
+
+### step1_0 Mul 단계
+
+<img src="/History/img/img33.png" width=400>
+
+mul_enable신호로 제어, 연산 주기가 짧아짐에따라 1clk은 그대로 출력(twddile factor = 1),다음 1clk은 sub연산 결과의 Re↔Im 교차(twiddle factor = j)가 8번반복됨.
+
 #### step 1
 솰라솰라
 
