@@ -268,9 +268,9 @@ Top Module Schematic을 바탕으로 Module들을 Wiring하였고, Vivado로 만
 
 > **Clocking Wizard**
 
-|<img src="/History/img/img50.png" width=250> |<img src="/History/img/img51.png" width=250>
-<img src="/History/img/img52.png" width=600>|
---|--
+<img src="/History/img/img50.png" width=250> <img src="/History/img/img51.png" width=250>
+<img src="/History/img/img52.png" width=600>
+
 
 FPGA에서 사용할 보드는 Avnet-Tria UltraZed-7EV Carrier Card로, System Clock이 300MHz이다. <br>
 하지만, 우리가 사용할 Clock은 100MHz이므로, System Clock을 Prescaling 해주어야 한다. <br>
@@ -306,6 +306,8 @@ FFT logic에 지속적으로 Fixed 형식의 Cosine 입력을 주기 위해 Cosi
 > **Xdc**
 
 <img src="/History/img/img56.png" width=350> 
+<img src="/History/img/img62.png" width=350> 
+
 
 
 
