@@ -317,8 +317,8 @@ reset의 경우 AA13 pin에 연결하고 LVCMOS 1.8V로 pin 전압 레벨을 설
 
 <img src="/History/img/img63.png" width=1000>
 <img src="/History/img/img64.png" width=1000>
-<img src="/History/img/img65.png" width=500 height=700>
-<img src="/History/img/img66.png" width=500 height=700>
+<img src="/History/img/img65.png" width=500 height=300>
+<img src="/History/img/img66.png" width=500 height=300>
 
 
 ## 🚀Trouble Shooting 
