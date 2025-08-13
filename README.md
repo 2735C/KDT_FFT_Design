@@ -297,7 +297,14 @@ Clocking Wizard에서 발생하는 locked 신호는 Prescaling한 clock이 완�
 
 <img src="/History/img/img60.png" width=250> <img src="/History/img/img61.png" width=250>
 
+FFT logic에 지속적으로 Fixed 형식의 Cosine 입력을 주기 위해 Cosine Generator를 설계하였다. <br>
+각 모듈의 step2에서 twiddle factor를 가져오는 방식과 유사하게 설계하였고, 1clk 당 real, imaginary 값이 16개씩 출력된다. <br>
+입력이 전달되는 동안 valid 신호를 발생시켜, 총 32clk의 valid 신호가 출력된다. <br>
+기존에 동적 배열 형태로 출력을 내보내도록 설계하였으나, Vivado에서 합성 오류가 발생해 Case문으로 출력을 내보내도록 처리하였다.
 
+> **Xdc**
+
+<img src="/History/img/img56.png" width=350> 
 
 
 
