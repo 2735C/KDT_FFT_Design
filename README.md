@@ -234,10 +234,10 @@ Timing_max|Timing_min| Area
 <img src="/History/img/img2.png" width=1000>
 Top Module Schematic을 바탕으로 Module들을 Wiring하였고, Vivado로 만든 Design은 다음과 같다.
 
-### FPGA Peripheral Circuit
 
-- Clocking_Wizard (Clk_Wiz_0)
+### Vivado
 
+> **Clocking Wizard**
 <img src="/History/img/img50.png" width=250> <img src="/History/img/img51.png" width=250>
 <img src="/History/img/img52.png" width=600>
 
@@ -249,18 +249,16 @@ Clocking Wizard에서 발생하는 locked 신호는 Prescaling한 clock이 완�
 따라서, locked 신호가 0이면 clk이 미완 상태이므로, 전체 시스템을 reset 상태로 유지해야 한다. <br>
 현재, 전체 시스템에서 Negative Reset을 사용 중이므로, locked 신호와 AND 처리해 reset 신호를 설정하였다. <br>
 
-- VIO
+> **VIO**
+<img src="/History/img/img53.png" width=250> <img src="/History/img/img54.png" width=250>
+<img src="/History/img/img55.png" width=400>
+
+실제 보드에 올리는 것이 아니므로 Bitstream의 동작 여부를 판단하기 위해서는 가상의 핀을 할당해야 한다. <br>
+이를 위해 Vivado의 IP를 활용하여 위와 같은 VIO를 설계하였다. <br>
+출력의 16개의 real 포트, 16개의 imaginary 포트, 그리고 출력이 되고 있다는 complete 포트, 총 33개로 구성되어 있다. <br>
+따라서, VIO는 33개의 input으로 구성되어 있다. 또한, 모든 출력이 나온 후 회로를 reset 해주기 위해 1개의 output을 추가해주었다.
 
 
-
-
-### Vivado
-
-
-> **Clocking Wizard**
-
-
-- vio 연결 설정이랑 xdc 설정 관해서 언급 및 사진, 결과 적기 
 
 
 
