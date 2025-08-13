@@ -156,9 +156,9 @@ add/sub 연산 후 mul_enable신호로 twiddle factor를 곱해주는 연산이 
 
 
 
-### 시뮬 사진
+###  Gate Simulation 결과
 
-이미지 
+<img src="/History/img/img11.png" width=400> <img src="/History/img/img12.png" width=400> 
 
 ## (5) FPGA Targeting
 ### Top Module Schematic
