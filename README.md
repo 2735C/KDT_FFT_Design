@@ -220,16 +220,16 @@ Top Module Schematic을 바탕으로 Module들을 Wiring하였고, Vivado로 만
 
 - Clocking_Wizard (Clk_Wiz_0)
 
-<img src="/History/img/img50.png" width=200> <img src="/History/img/img51.png" width=200>
+<img src="/History/img/img50.png" width=250> <img src="/History/img/img51.png" width=250>
 <img src="/History/img/img52.png" width=600>
 
-FPGA에서 사용할 보드는 Avnet-Tria UltraZed-7EV Carrier Card로, System Clock이 300MHz이다.
-하지만, 우리가 사용할 Clock은 100MHz이므로, System Clock을 Prescaling 해주어야 한다.
-이를 위해, Vivado의 IP를 활용하여 위와 같은 Clocking_Wizard를 설계하였다.
+FPGA에서 사용할 보드는 Avnet-Tria UltraZed-7EV Carrier Card로, System Clock이 300MHz이다. <br>
+하지만, 우리가 사용할 Clock은 100MHz이므로, System Clock을 Prescaling 해주어야 한다. <br>
+이를 위해, Vivado의 IP를 활용하여 위와 같은 Clocking_Wizard를 설계하였다. <br>
 
-Clocking Wizard에서 발생하는 locked 신호는 Prescaling한 clock이 완벽한 준비 상태인지 나타내는 신호이다.
-따라서, locked 신호가 0이면 clk이 미완 상태이므로, 전체 시스템을 reset 상태로 유지해야 한다.
-현재, 전체 시스템에서 Negative Reset을 사용 중이므로, locked 신호와 AND 처리해 reset 신호를 설정하였다.
+Clocking Wizard에서 발생하는 locked 신호는 Prescaling한 clock이 완벽한 준비 상태인지 나타내는 신호이다. <br>
+따라서, locked 신호가 0이면 clk이 미완 상태이므로, 전체 시스템을 reset 상태로 유지해야 한다. <br>
+현재, 전체 시스템에서 Negative Reset을 사용 중이므로, locked 신호와 AND 처리해 reset 신호를 설정하였다. <br>
 
 - VIO
 
