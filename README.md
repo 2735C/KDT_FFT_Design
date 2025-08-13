@@ -113,13 +113,13 @@ step마다 각각 twiddle factor가 다르니까 format이랑 연산 방법 등�
 각 모듈의 step0는 매 클럭마다 16개의 입력값을 병렬로 연산한다
 연산은 2단구조: Add/Sub enable 신호와 Mulenable신호로 제어한다.
 
-<img src="/History/img/img30.png" width=400>
+<img src="/History/img/img30.png" width=400> <img src="/History/img/img31.png" width=400>
 
 ### step0_0 Add/Sub 단계
 
 16clk동안 shift register로 입력값을 저장한 뒤, 다음 16clk동안 shift register의 출력값과 새로 들어오는 입력값을 add/sub (저장 16clk, 연산 16clk: 총 32clk 소요)
 
-<img src="/History/img/img31.png" width=400>
+<img src="/History/img/img31.png" width=400> 
 
 ### step0_0 Mul 단계
 
