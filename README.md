@@ -320,6 +320,11 @@ reset의 경우 AA13 pin에 연결하고 LVCMOS 1.8V로 pin 전압 레벨을 설
 
 <img src="/History/img/img65.png" width=400> <img src="/History/img/img66.png" width=400>
 
+Vivado 합성 결과, Setup Time과 Hold Time을 만족할 수 있었고, Latency도 기존과 동일하게 89clk이 나오는 것을 simulation 파형을 통해 확인할 수 있었다. <br>
+Utilization Report에서 LUT의 비율이 30%인데, function과 제어 신호 assign 등 Combinational Logic을 다수 사용한 결과임을 확인할 수 있었다. <br>
+이에 비하여 FF, DSP는 약 10% 정도로 관찰되어 적정 수준의 Pipelining과 Multiplier를 사용한 것을 확인할 수 있었다. 특히 Multiplier의 경우 bitshift 방식으로 곱셈을 다수 처리해 확연히 줄일 수 있었다.
+
+
 
 ## 🚀Trouble Shooting 
 [⚒️[Timing Miss Match Trouble]](/History/trouble_shooting/Trouble_Shooting1.md)   <br>
