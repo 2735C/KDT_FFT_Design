@@ -105,7 +105,7 @@ Fixed, float 개념부터 foarmat 관련 이야기랑 matlab 시행착오 등등
 
 ## (2) RTL Simulation
 
-> ### [Butterfly Calculation] :one: ~ :two:
+ ### Butterfly Calculation (:one: ~ :three:)
 <img src="/History/img/img10.png" width=1000> <br>
 Butterfly Calculation을 clk당 16개의 데이터 처리로 해결하기에는 N = 512기준 으로 1과 256번 인덱스 연산까지 오는 clk때 까지 가기전에 다음 clk때 데이터가 소실되는 문제가 있습니다.<br>
 이를 해결 하기위해 쉬프트 레지스터를 사용하여 256번째 인덱스 데이터가 오기까지 clk마다 데이터를 저장하고 256번쨰 인덱스가 들어 오는 clk때부터는 쉬프트레지스터 1번 인덱스 부터의 출력과 입력 데이터 간에 버터플라이 연산을 수행합니다.<br>
@@ -189,10 +189,17 @@ step0_2 Mul 단계| step1_2 Mul 단계
 > step1_2부터는 연산이 매clk마다 수행되어 출력됨
 
 
-> ### [CBFP]
+ ### CBFP
+
+ #### ➤ BFP vs CBFP
+
+|<img src="/History/img/img74.png" width=500>|<img src="/History/img/img75.png" width=500>
+--|--
+
+
 ### 📉 기존 기법: BFP (Block Floating Point)
 
-🍬  <u>**FFT 출력 데이터**를 메모리에 저장하기 전에, 그 블록의 최대 진폭을 기준으로 **공통 지수(exponent)**를 정하고, 해당 지수에 따라 모든 데이터를 **스케일링**.</u>
+🍬  <u>**FFT 출력 데이터**를 메모리에 저장하기 전에, 그 블록의 최대 진폭을 기준으로 **공통 지수(exponent)** 를 정하고, 해당 지수에 따라 모든 데이터를 **스케일링**.</u>
 
 🍬 **장점:** 지수를 하나만 저장하면 되므로 **메모리 절약 가능**.
 
@@ -211,23 +218,7 @@ step0_2 Mul 단계| step1_2 Mul 단계
 🍫 이전 스테이지의 일부 출력값만으로 다음 스테이지 지수를 결정할 수 있음.
 
 
-#### ➤ 그림 6 vs 그림 7
 
-|<img src="/History/img/img74.png" width=500>|<img src="/History/img/img75.png" width=500>
---|--
-
-* **그림 6 (BFP):**
-
-   * 각 FFT 스테이지마다 모든 데이터가 공통 지수를 가짐
-
-   * 한 스테이지 전체를 기다려야 다음 스테이지 수행 가능
-
-
-* **그림 7 (CBFP):**
-
-   * 각 데이터 블록(N/4 등)마다 다른 지수 사용 가능
-
-   * 스테이지 출력을 일부만 계산해도 다음 연산이 가능 → 병렬 처리, 파이프라인 최적화에 유리
 
 ### 시뮬 사진 
 아무 생각이 없다
