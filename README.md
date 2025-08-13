@@ -214,7 +214,7 @@ step1_2부터는 연산이 매clk마다 수행되어 출력됨
 
 ### Elaborated Design
 <img src="/History/img/img2.png" width=1000>
-Top Module Schematic을 바탕으로 Module들을 Wiring하고, Vivado로 만든 Design은 다음과 같다.
+Top Module Schematic을 바탕으로 Module들을 Wiring하였고, Vivado로 만든 Design은 다음과 같다.
 
 ### Vivado
 
