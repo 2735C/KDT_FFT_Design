@@ -267,6 +267,7 @@ Top Module Schematic을 바탕으로 Module들을 Wiring하였고, Vivado로 만
 ### Vivado
 
 > **Clocking Wizard**
+
 <img src="/History/img/img50.png" width=250> <img src="/History/img/img51.png" width=250>
 <img src="/History/img/img52.png" width=600>
 
@@ -279,14 +280,21 @@ Clocking Wizard에서 발생하는 locked 신호는 Prescaling한 clock이 완�
 현재, 전체 시스템에서 Negative Reset을 사용 중이므로, locked 신호와 AND 처리해 reset 신호를 설정하였다. <br>
 
 > **VIO**
+
 <img src="/History/img/img53.png" width=250> <img src="/History/img/img54.png" width=250>
-<img src="/History/img/img55.png" width=400>
+<img src="/History/img/img55.png" width=250>
 
 실제 보드에 올리는 것이 아니므로 Bitstream의 동작 여부를 판단하기 위해서는 가상의 핀을 할당해야 한다. <br>
 이를 위해 Vivado의 IP를 활용하여 위와 같은 VIO를 설계하였다. <br>
 출력의 16개의 real 포트, 16개의 imaginary 포트, 그리고 출력이 되고 있다는 complete 포트, 총 33개로 구성되어 있다. <br>
-따라서, VIO는 33개의 input으로 구성되어 있다. 또한, 모든 출력이 나온 후 회로를 reset 해주기 위해 1개의 output을 추가해주었다.
+따라서, VIO는 33개의 input으로 구성되어 있다. 또한, 모든 출력이 나온 후 회로를 reset 해주기 위한 1개의 output을 추가해주었다.
 
+> **Cosine Generator**
+
+<img src="/History/img/img57.png" width=250> 
+<img src="/History/img/img58.png" width=250> <img src="/History/img/img59.png" width=250>
+
+<img src="/History/img/img60.png" width=250> <img src="/History/img/img61.png" width=250>
 
 
 
