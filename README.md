@@ -195,9 +195,9 @@ step0_2 Mul 단계| step1_2 Mul 단계
 아무 생각이 없다
 
 ## (3) Synthesis
-timing_max| timing_min |Area
---|--|--
-<img src="/History/img/img70.png" width=500> | <img src="/History/img/img71.png" width=500>| <img src="/History/img/img72.png" width=500>
+timing_max|Area
+--|--
+<img src="/History/img/img70.png" width=500> | <img src="/History/img/img72.png" width=500>
 
 ## (4) Gate Simulation
 
