@@ -341,6 +341,9 @@ Latency = (915ns - 30ns) / clk_period = 88.5clk => 89clk <br>
 
 <img src="/History/img/img150.png" width=400> <img src="/History/img/img151.png" width=400>
 
+Simulation 결과를 직접 비교하기 위해 0~15 / 128~143 / 256~271 / 384~399 / 496~511 으로 Index 구간을 나누어 비교를 진행했다. <br>
+각 구간에서 Real, Imaginary 값 모두 Reordering된 순서로 출력됨을 확인할 수 있었고, 이후 반복되는 출력에서도 동일하게 나타났다.
+
 
 ## 🚀Trouble Shooting 
 [⚒️[Timing Miss Match Trouble]](/History/trouble_shooting/Trouble_Shooting1.md)   <br>
