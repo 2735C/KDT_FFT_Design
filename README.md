@@ -112,7 +112,7 @@ Butterfly Calculation을 clk당 16개의 데이터 처리로 해결하기에는 
 이러한 입/출력 제어는 카운터로 제어되며 다음 단계에서는 버터플라이 연산을 하는데 필요한 인덱스가 달라지기에 필요한 쉬프트 레지스터의 크기 와 카운터의 비트가 작아지게 됩니다.<br>
 카운터는 이 밖에도 버터플라이 연산결과를 곱셈연산 제어할떄도 사용됩니다.<br>
 
-### step 0
+### :one: step 0
 
 각 모듈의 step0는 매 클럭마다 16개의 입력값을 병렬로 연산한다
 연산은 2단구조: Add/Sub enable 신호와 Mulenable신호로 제어한다.
@@ -135,7 +135,7 @@ step0_0 Mul 단계|step1_0 Mul 단계|
 > 앞선 연산값이 그대로 출력(twddile factor = 1), sub연산 결과의 Re↔Im 교차(twiddle factor = j)이 반복되어 수행됨
 
 
-### step 1
+### :two: step 1
 
 step0_1 Add/Sub 단계| step1_1 Add/Sub 단계|
 --|--
@@ -161,7 +161,7 @@ step0_1 Mul 단계 | step1_1 Mul 단계|
 > 버터플라이 연산이 진행될수록 연산 주기가 짧아져 module1의 step1에서는 더 짧은 주기로 twiddle factor의 곱셈 조합이 변화됨
 
 
-### step 2
+### :three: step 2
 
  step0_2 Add/Sub 단계 |  step1_2 Add/Sub 단계
 --|--
@@ -188,6 +188,7 @@ step0_2 Mul 단계| step1_2 Mul 단계
 
 > step1_2부터는 연산이 매clk마다 수행되어 출력됨
 
+##
 
 ### CBFP
 ### 📉 기존 기법: BFP (Block Floating Point)
