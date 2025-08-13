@@ -113,14 +113,14 @@ Butterfly Calculation을 clk당 16개의 데이터 처리로 해결하기에는 
 각 모듈의 step0는 매 클럭마다 16개의 입력값을 병렬로 연산한다
 연산은 2단구조: Add/Sub enable 신호와 Mulenable신호로 제어한다.
 
-### step0_0 Add/Sub 단계   step1_0 Add/Sub 단계
+### step0_0 Add/Sub 단계                       step1_0 Add/Sub 단계
 
 <img src="/History/img/img30.png" width=400> <img src="/History/img/img32.png" width=400>
 
 
 shift register로 입력값을 저장한 뒤, shift register의 출력값과 새로 들어오는 입력값의 add/sub 동작 수행 
   
-### step0_0 Mul 단계   step1_0 Mul 단계
+### step0_0 Mul 단계                           step1_0 Mul 단계
 
 <img src="/History/img/img31.png" width=400> <img src="/History/img/img33.png" width=400>
 
