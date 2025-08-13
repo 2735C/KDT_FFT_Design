@@ -291,7 +291,8 @@ Clocking Wizard에서 발생하는 locked 신호는 Prescaling한 clock이 완�
 
 > **Cosine Generator**
 
-<img src="/History/img/img57.png" width=250> 
+<img src="/History/img/img57.png" width=350> 
+
 <img src="/History/img/img58.png" width=250> <img src="/History/img/img59.png" width=250>
 
 <img src="/History/img/img60.png" width=250> <img src="/History/img/img61.png" width=250>
