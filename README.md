@@ -313,7 +313,7 @@ Avnet-Tria UltraZed-7EV Carrier Card는 차동 구조의 clk을 사용한다. <b
 reset의 경우 AA13 pin에 연결하고 LVCMOS 1.8V로 pin 전압 레벨을 설정하여 사용한다.
 
 
-**Implementation Result**
+> **Implementation Result**
 
 <img src="/History/img/img63.png" width=1000>
 <img src="/History/img/img64.png" width=1000>
@@ -325,6 +325,21 @@ Vivado 합성 결과, Setup Time과 Hold Time이 모두 만족되었으며, 시�
 반면 FF와 DSP 사용률은 각각 약 10% 수준으로, 적절한 파이프라이닝과 곱셈기 활용이 이루어졌음을 보여준다. <br>
 특히 곱셈 연산의 경우, 다수를 Bitshift 방식으로 대체하여 DSP 사용량을 눈에 띄게 줄일 수 있었다. 
 
+> **Simulation Result**
+
+<img src="/History/img/img67.png" width=1000>
+
+clk_period = 1/100MHz = 10ns <br>
+Latency = (915ns - 30ns) / clk_period = 88.5clk => 89clk <br>
+
+시뮬레이션 파형을 통해 Latency가 Synopsys Gate Synthesis 결과와 동일함을 확인할 수 있었다. <br>
+또한, Cosine input을 32clk 동안 주고 8clk 동안 쉰 뒤 다시 주었을 때, 출력 또한 같은 길이로 동작함을 확인할 수 있었다. <br>
+
+- 결과 비교
+
+<img src="/History/img/img68.png" width=500> <img src="/History/img/img69.png" width=500>
+
+<img src="/History/img/img150.png" width=500> <img src="/History/img/img151.png" width=500>
 
 
 ## 🚀Trouble Shooting 
