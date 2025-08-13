@@ -116,7 +116,7 @@ Butterfly Calculation을 clk당 16개의 데이터 처리로 해결하기에는 
 각 모듈의 step0는 매 클럭마다 16개의 입력값을 병렬로 연산한다
 연산은 2단구조: Add/Sub enable 신호와 Mulenable신호로 제어한다.
 
-#### step0_0 Add/Sub 단계&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     step1_0 Add/Sub 단계
+#### step0_0 Add/Sub 단계                        step1_0 Add/Sub 단계
 
 <img src="/History/img/img30.png" width=400> <img src="/History/img/img32.png" width=400>
 
@@ -156,7 +156,28 @@ twiddle factor가 복소수일 경우에는 결과의 Re↔Im 교차가 발생�
 
 
 ### step 2
-솰라솰라
+
+#### step0_2 Add/Sub 단계                        step1_2 Add/Sub 단계
+
+<img src="/History/img/img38.png" width=400> <img src="/History/img/img39.png" width=400>
+
+
+step1과 동일하게 4가지의 shift type에 따라 shift register의 경로 설정, add/sub enable 신호가 각각 다르게 제어됨
+module이 진행됨에 따라 shift register의 크기가 달라짐
+shift type이 0,2일때는 shift register의 경로를 결정하여 저장하고, shift type이 1,3일 때 연산을 수행함
+
+  
+#### step0_2 Mul 단계                            step1_2 Mul 단계
+
+<img src="/History/img/img40.png" width=400> <img src="/History/img/img41.png" width=400>
+
+
+add/sub 연산 후 mul_enable신호로 twiddle factor를 곱해주는 연산이 수행됨
+twiddle factor는 미리 계산한 뒤, ROM에 저장하여 각 연산 index에 맞춰 곱셈을 수행함
+twiddle factor가 복소수일 경우에는 결과의 Re↔Im 교차가 발생함
+step1_2부터는 연산이 매clk마다 수행되어 출력됨
+
+
 ### CBFP
 솰라솰라<br> 
 
