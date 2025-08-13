@@ -163,6 +163,7 @@ add/sub 연산 후 mul_enable신호로 twiddle factor를 곱해주는 연산이 
 ## (4) Gate Simulation
 
 ### Testbench Code 핵심 첨부 및 설명
+<img src="/History/img/img13.png" width=500> <br>
 - 게이트 시뮬레이션은 RTL구현에서 합성이후 시뮬레이션 단계로 이떄부터는 이상적인 동작을 넘어 실제 동작과 같은 환경과 같이 테스트 하게 됩니다.
 이과정을 통해 알수 있는것은 합성이 완벽하게 되었는지 와 앞선 신호가 X를 출력할때 그 이후 신호들이 모두 X를 출력하는 X-problem문제까지 찾을수 있습니다. <br>
 - 게이트 시뮬레이션 테스트 결과는 합성에 문제가 있었던 부분과 코드에서 초기화 하지 않은 부분들을 찾을 수 있게 되어 실제 Chip이 오동작을 일으키는 문제를 방지할수 있습니다. <br>
@@ -173,7 +174,8 @@ add/sub 연산 후 mul_enable신호로 twiddle factor를 곱해주는 연산이 
 
 ###  Gate Simulation 결과
 
-<img src="/History/img/img11.png" width=400> <img src="/History/img/img12.png" width=400> 
+<img src="/History/img/img11.png" width=1000> <br>
+<img src="/History/img/img12.png" width=1000> <br>
 
 ## (5) FPGA Targeting
 ### Top Module Schematic
