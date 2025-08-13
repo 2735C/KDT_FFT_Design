@@ -312,6 +312,11 @@ Avnet-Tria UltraZed-7EV Carrier Card는 차동 구조의 clk을 사용한다. <b
 
 reset의 경우 AA13 pin에 연결하고 LVCMOS 1.8V로 pin 전압 레벨을 설정하여 사용한다.
 
+**Implementation Result**
+
+<img src="/History/img/img63.png" width=600>
+
+
 
 ## 🚀Trouble Shooting 
 [⚒️[Timing Miss Match Trouble]](/History/trouble_shooting/Trouble_Shooting1.md)   <br>
