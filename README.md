@@ -120,6 +120,7 @@ Butterfly Calculation을 clk당 16개의 데이터 처리로 해결하기에는 
 
 
 shift register로 입력값을 저장한 뒤, shift register의 출력값과 새로 들어오는 입력값의 add/sub 동작 수행 
+
   
 #### step0_0 Mul 단계                            step1_0 Mul 단계
 
@@ -139,6 +140,7 @@ add/sub 연산 후 mul_enable신호로 twiddle factor를 곱해주는 연산이 
 
 4가지의 shift type에 따라 shift register의 경로 설정, add/sub enable 신호가 각각 다르게 제어됨
 shift type이 0,2일때는 shift register의 경로를 결정하여 저장하고, shift type이 1,3일 때 연산을 수행함
+
   
 #### step0_1 Mul 단계                            step1_1 Mul 단계
 
@@ -149,6 +151,7 @@ add/sub 연산 후 mul_enable신호로 twiddle factor를 곱해주는 연산이 
 twiddle factor값이 다양해지면서 다양한 조합으로 곱셈을 진행함
 twiddle factor가 복소수일 경우에는 결과의 Re↔Im 교차가 발생함
 버터플라이 연산이 진행될수록 연산 주기가 짧아져 module1의 step1에서는 더 짧은 주기로 twiddle factor의 곱셈 조합이 변화됨
+
 
 ### step 2
 솰라솰라
