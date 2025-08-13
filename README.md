@@ -195,9 +195,9 @@ step0_2 Mul 단계| step1_2 Mul 단계
 아무 생각이 없다
 
 ## (3) Synthesis
-
-합성 결과 사진 첨부 이건 제가 파일 zip 해제 안 해도 돼서 제가 넣을게요
-
+timing_max| timing_min |Area
+--|--|--
+<img src="/History/img/img70.png" width=500> | <img src="/History/img/img71.png" width=500>| <img src="/History/img/img72.png" width=500>
 
 ## (4) Gate Simulation
 
