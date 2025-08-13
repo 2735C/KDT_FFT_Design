@@ -219,6 +219,7 @@ Top Module Schematic을 바탕으로 Module들을 Wiring하였고, Vivado로 만
 ### FPGA Peripheral Circuit
 
 - Clocking_Wizard (Clk_Wiz_0)
+
 <img src="/History/img/img50.png" width=300> <img src="/History/img/img51.png" width=300>
 <img src="/History/img/img52.png" width=600>
 
