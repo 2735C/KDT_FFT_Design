@@ -113,32 +113,21 @@ Butterfly Calculation을 clk당 16개의 데이터 처리로 해결하기에는 
 각 모듈의 step0는 매 클럭마다 16개의 입력값을 병렬로 연산한다
 연산은 2단구조: Add/Sub enable 신호와 Mulenable신호로 제어한다.
 
-### step0_0 Add/Sub 단계
+### step0_0 Add/Sub 단계   step1_0 Add/Sub 단계
 
-<img src="/History/img/img30.png" width=400>
-
-
-16clk동안 shift register로 입력값을 저장한 뒤, 다음 16clk동안 shift register의 출력값과 새로 들어오는 입력값을 add/sub (저장 16clk, 연산 16clk: 총 32clk 소요)
-
-### step0_0 Mul 단계
-
-<img src="/History/img/img31.png" width=400> 
+<img src="/History/img/img30.png" width=400> <img src="/History/img/img32.png" width=400>
 
 
-add/sub 연산 후 mul 계산 시작
-전반 8clk은 그대로 출력(twddile factor = 1),후반 8clk은 sub연산 결과의 Re↔Im 교차(twiddle factor = j)
+shift register로 입력값을 저장한 뒤, shift register의 출력값과 새로 들어오는 입력값의 add/sub 동작 수행 
+  
+### step0_0 Mul 단계   step1_0 Mul 단계
 
-### step1_0 Add/Sub 단계
+<img src="/History/img/img31.png" width=400> <img src="/History/img/img33.png" width=400>
 
-<img src="/History/img/img32.png" width=400>
 
-step0_0과 구조는 동일하되 연산 수행 주기가 달라짐(저장 2clk, 연산 2clk 총 8번 반복: 총 32clk 소요)
+add/sub 연산 후 mul_enable신호로 twiddle factor를 곱해주는 연산이 수행됨
+앞선 연산값이 그대로 출력(twddile factor = 1), sub연산 결과의 Re↔Im 교차(twiddle factor = j)이 반복되어 수행됨
 
-### step1_0 Mul 단계
-
-<img src="/History/img/img33.png" width=400>
-
-mul_enable신호로 제어, 연산 주기가 짧아짐에따라 1clk은 그대로 출력(twddile factor = 1),다음 1clk은 sub연산 결과의 Re↔Im 교차(twiddle factor = j)가 8번반복됨.
 
 #### step 1
 솰라솰라
