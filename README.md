@@ -108,19 +108,20 @@ Butterfly Calculation을 clk당 16개의 데이터 처리로 해결하기에는 
 이를 해결 하기위해 쉬프트 레지스터를 사용하여 256번째 인덱스 데이터가 오기까지 clk마다 데이터를 저장하고 256번쨰 인덱스가 들어 오는 clk때부터는 쉬프트레지스터 1번 인덱스 부터의 출력과 입력 데이터 간에 버터플라이 연산을 수행합니다.<br>
 이러한 입/출력 제어는 카운터로 제어되며 다음 단계에서는 버터플라이 연산을 하는데 필요한 인덱스가 달라지기에 필요한 쉬프트 레지스터의 크기 와 카운터의 비트가 작아지게 됩니다.<br>
 카운터는 이 밖에도 버터플라이 연산결과를 곱셈연산 제어할떄도 사용됩니다.<br>
+
 #### step 0
 
 각 모듈의 step0는 매 클럭마다 16개의 입력값을 병렬로 연산한다
 연산은 2단구조: Add/Sub enable 신호와 Mulenable신호로 제어한다.
 
-### step0_0 Add/Sub 단계                       step1_0 Add/Sub 단계
+### step0_0 Add/Sub 단계                       ### step1_0 Add/Sub 단계
 
 <img src="/History/img/img30.png" width=400> <img src="/History/img/img32.png" width=400>
 
 
 shift register로 입력값을 저장한 뒤, shift register의 출력값과 새로 들어오는 입력값의 add/sub 동작 수행 
   
-### step0_0 Mul 단계                           step1_0 Mul 단계
+### step0_0 Mul 단계                           ### step1_0 Mul 단계
 
 <img src="/History/img/img31.png" width=400> <img src="/History/img/img33.png" width=400>
 
@@ -130,7 +131,21 @@ add/sub 연산 후 mul_enable신호로 twiddle factor를 곱해주는 연산이 
 
 
 #### step 1
-솰라솰라
+
+### step0_1 Add/Sub 단계                       ### step1_1 Add/Sub 단계
+
+<img src="/History/img/img34.png" width=400> <img src="/History/img/img36.png" width=400>
+
+
+shift register로 입력값을 저장한 뒤, shift register의 출력값과 새로 들어오는 입력값의 add/sub 동작 수행 
+  
+### step0_1 Mul 단계                           ### step1_1 Mul 단계
+
+<img src="/History/img/img35.png" width=400> <img src="/History/img/img37.png" width=400>
+
+
+add/sub 연산 후 mul_enable신호로 twiddle factor를 곱해주는 연산이 수행됨
+앞선 연산값이 그대로 출력(twddile factor = 1), sub연산 결과의 Re↔Im 교차(twiddle factor = j)이 반복되어 수행됨
 
 #### step 2
 솰라솰라
