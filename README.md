@@ -110,6 +110,20 @@ Butterfly Calculation을 clk당 16개의 데이터 처리로 해결하기에는 
 #### step 0
 step마다 각각 twiddle factor가 다르니까 format이랑 연산 방법 등에 대해 소개하던가 코드 부분 발췌해서 설명하던가(허수 실수 교차 되는 거 등등)
 
+각 모듈의 step0는 매 클럭마다 16개의 입력값을 병렬로 연산한다
+연산은 2단구조: Add/Sub enable 신호와 Mulenable신호로 제어한다
+<img src="/History/img/img30.png" width=1000>
+
+### step0_0 Add/Sub 단계
+
+16clk동안 shift register로 입력값을 저장한 뒤, 다음 16clk동안 shift register의 출력값과 새로 들어오는 입력값을 add/sub (저장 16clk, 연산 16clk: 총 32clk 소요)
+<img src="/History/img/img31.png" width=1000>
+
+### step0_0 Mul 단계
+
+add/sub 연산 후 mul 계산 시작
+전반 8clk은 그대로 출력(twddile factor = 1),후반 8clk은 sub연산 결과의 Re↔Im 교차(twiddle factor = j)
+
 #### step 1
 솰라솰라
 
