@@ -308,7 +308,10 @@ FFT logic에 지속적으로 Fixed 형식의 Cosine 입력을 주기 위해 Cosi
 <img src="/History/img/img56.png" width=350> 
 <img src="/History/img/img62.png" width=350> 
 
+Avnet-Tria UltraZed-7EV Carrier Card는 차동 구조의 clk을 사용한다. <br>
+따라서, AC8, AC7 pin에 연결해 각각 clk_p, clk_n을 설정하고 LVDS(Low Voltage Differential Signaling) 표준으로 설정하여 300MHz 차동 클럭을 받는다. <br>
 
+reset의 경우 AA13 pin에 연결하고 LVCMOS 1.8V로 pin 전압 레벨을 설정하여 사용한다.
 
 
 ## 🚀Trouble Shooting 
