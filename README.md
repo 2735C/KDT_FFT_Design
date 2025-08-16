@@ -87,9 +87,9 @@ CBFP 모델을 기반으로 **RTL 설계 및 합성**을 진행하고, 이를 �
 
 
 ## 개발 과정
-> 더 많은 내용을 확인하고 싶으면 --> [[발표 자료]](/History/PPT/Team2_발표자료.pdf)
+> 요약본을 확인하고 싶으면 --> [[발표 자료]](/History/PPT/Team2_발표자료.pdf)
 
-## (1) Fixed point modeling
+## (1) Fixed point modeling [[Matlab]](/History/Progress_report/matlab.md)
 
 ### ➤ BFP vs CBFP
 
@@ -118,7 +118,7 @@ CBFP 모델을 기반으로 **RTL 설계 및 합성**을 진행하고, 이를 �
 
 ### ✳️ 성능 향상
 
-<img src="/History/img/img76.png" width=600>|
+<img src="/History/img/img76.png" width=1000>|
 --|
 
 
