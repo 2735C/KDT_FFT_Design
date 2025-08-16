@@ -161,6 +161,11 @@ Timing_max|Timing_min| Area
 <img src="/History/img/img80.png" width=500> |Setup Time & Hold Time Slack MET
 
 
+## 진행 결과
+
+<img src="/History/img/img81.png" width=1000>|
+--|
+
 ## 🚀Trouble Shooting 
 [⚒️[Timing Miss Match Trouble]](/History/trouble_shooting/Trouble_Shooting1.md)   <br>
 [⚒️[Random Input Trouble]](/History/trouble_shooting/Trouble_Shooting2.md)  <br>
