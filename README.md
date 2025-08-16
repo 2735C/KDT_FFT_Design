@@ -12,19 +12,19 @@
 
 ### 🐶최윤석
 - Team leader
-- BFP 기반 FFT Fixed point modeling
+- BFP-based FFT Fixed point modeling
 - Butterfly Calculation Module RTL Desgin 
 - Gate simulation testbench design & Gate simulation
 
 
 ### 🐧배상원
-- BFP 기반 FFT Fixed point modeling
+- BFP-based FFT Fixed point modeling
 - Butterfly Calculation Module RTL Desgin 
 - Gate simulation & Debugging
 
 
 ### 🐻윤의빈
-- BFP 기반 FFT Fixed point modeling
+- BFP-based FFT Fixed point modeling
 - Butterfly Calculation Module & Bit reverse RTL Desgin 
 - Gate simulation & Debugging
 - FPGA targeting
@@ -32,13 +32,43 @@
 
 
 ### 🐤정은지 
-- BFP 기반 FFT Fixed point modeling
+- BFP-based FFT Fixed point modeling
 - CBFP Module RTL Desgin 
 - Gate simulation & Debugging
 - FPGA targeting
 
 
 ## 🚀프로젝트 개요
+
+본 프로젝트에서는 **BFP(Block Floating Point) 기반 Radix-2² 구조의 FFT**를 대상으로 MATLAB 환경에서 Floating 모델을 **Q-format 기반 Fixed-point 모델로 변환**하여 **알고리즘 수준의 사전 검증(High-level verification)** 을 수행하였다. 이어서 CBFP(Combined Block Floating Point) 모델의 Fixed-point 구현을 적용하여 **BFP와 CBFP 알고리즘 간 성능을 비교**하였다.
+
+CBFP 모델을 기반으로 **RTL 설계 및 합성**을 진행하고, 이를 통해 **setup time violation, Area, Latency** 등의 특성을 분석하였다. 마지막으로 **게이트 레벨 시뮬레이션**과 **FPGA Targeting**을 수행하여 RTL 설계의 기능적 타당성을 검증하였다.
+
+
+💻**개발 환경** <br>
+
+- **모델링 및 알고리즘 설계**
+  - MATLAB (Floating/Fixed-point 모델링 및 High-level verification)
+
+- **시뮬레이션 및 검증**
+  - Synopsys VCS (RTL 및 게이트 레벨 논리 시뮬레이션)
+  - Synopsys Verdi (파형 분석 및 디버깅)
+
+- **개발 툴 및 편집기**
+  - MobaXterm (원격 개발 환경)
+  - Visual Studio Code (RTL 및 스크립트 편집)
+
+- **합성 및 게이트 시뮬레이션**
+  - Synopsys Design Compiler (합성)
+  - Synopsys VCS/Verdi (게이트 레벨 시뮬레이션)
+
+- **FPGA 타겟팅**
+  - Xilinx Vivado (Bitstream 생성 및 FPGA 구현)
+
+- **하드웨어 플랫폼**
+  - Avnet UltraZed-7EV Carrier Card
+
+
 **FFT란?** <br>
 
 <img width="800" alt="image" src="https://github.com/user-attachments/assets/a09e11f8-483d-4b9a-be05-764e73d76ca3" /> |
