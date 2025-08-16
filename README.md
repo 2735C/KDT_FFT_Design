@@ -44,8 +44,17 @@
 
 CBFP 모델을 기반으로 **RTL 설계 및 합성**을 진행하고, 이를 통해 **setup time violation, Area, Latency** 등의 특성을 분석하였다. 마지막으로 **게이트 레벨 시뮬레이션**과 **FPGA Targeting**을 수행하여 RTL 설계의 기능적 타당성을 검증하였다.
 
+##
 
-💻**개발 환경** <br>
+### 💻 개발 환경 <br>
+
+| **모델링 및 알고리즘 설계** | MATLAB (Floating/Fixed-point 모델링 및 High-level verification)|
+--|--
+**시뮬레이션 및 검증**|  Synopsys VCS (RTL 및 게이트 레벨 논리 시뮬레이션) <br> Synopsys Verdi (파형 분석 및 디버깅)|
+**개발 툴 및 편집기**|   MobaXterm (원격 개발 환경) <br> Visual Studio Code (RTL 및 스크립트 편집)
+**합성 및 게이트 시뮬레이션**| Synopsys Design Compiler (합성) <br> Synopsys VCS/Verdi (게이트 레벨 시뮬레이션)
+**FPGA 타겟팅**| Xilinx Vivado (Bitstream 생성 및 FPGA 구현)
+**하드웨어 플랫폼**| Avnet UltraZed-7EV Carrier Card
 
 - **모델링 및 알고리즘 설계**
   - MATLAB (Floating/Fixed-point 모델링 및 High-level verification)
