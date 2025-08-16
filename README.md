@@ -92,6 +92,9 @@ CBFP 모델을 기반으로 **RTL 설계 및 합성**을 진행하고, 이를 �
 
 ### ➤ BFP vs CBFP
 
+|<img src="/History/img/img74.png" width=350>|<img src="/History/img/img75.png" width=350>
+--|--
+
 ### 📉 기존 기법: BFP (Block Floating Point)
 
 🍬  <u>**FFT 출력 데이터**를 메모리에 저장하기 전에, 그 블록의 최대 진폭을 기준으로 **공통 지수(exponent)** 를 정하고, 해당 지수에 따라 모든 데이터를 **스케일링**.</u>
@@ -112,12 +115,11 @@ CBFP 모델을 기반으로 **RTL 설계 및 합성**을 진행하고, 이를 �
 
 🍫 이전 스테이지의 일부 출력값만으로 다음 스테이지 지수를 결정할 수 있음.
 
-|<img src="/History/img/img74.png" width=300>|<img src="/History/img/img75.png" width=300>
---|--
+
 
 ### ✳️ 성능 향상
 
-<img src="/History/img/img76.png" width=700>|
+<img src="/History/img/img76.png" width=650>|
 --|
 
 
@@ -140,9 +142,9 @@ CBFP 모델을 기반으로 **RTL 설계 및 합성**을 진행하고, 이를 �
 0.14 ps| 187768.2| 89 clk
 
 
-Timing_max|Timing_min| Area
+Timing_max| Area
 --|--|--
-|<img src="/History/img/img70.png" width=500>| <img src="/History/img/img71.png" width=500>| <img src="/History/img/img72.png" width=500>|
+|<img src="/History/img/img70.png" width=500>| <img src="/History/img/img72.png" width=500>|
 
 > Hold time은 Layout 단계에서 충분히 해결 가능하므로 front-end 과정에서는 Setup time과 Area 최적화에 집중하였다.
 
@@ -156,9 +158,9 @@ Timing_max|Timing_min| Area
 --|--|--
 65538 (30%)| 0.576 ns| 89 clk|
 
-<img src="/History/img/img79.png" width=500> |- LUT 30% 사용 -> Combinational Logic ↑<br>- FF, DSP 약 10% -> 적정 Pipelining, Multiplier
+<img src="/History/img/img79.png" width=500> |<div align = "left">- LUT 30% 사용 -> Combinational Logic ↑<br>- FF, DSP 약 10% -> 적정 Pipelining, Multiplier
 --|--
-<img src="/History/img/img80.png" width=500> |Setup Time & Hold Time Slack MET
+<img src="/History/img/img80.png" width=500> |- **Setup Time & Hold Time Slack MET** |
 
 
 ## 진행 결과
