@@ -48,13 +48,17 @@ CBFP 모델을 기반으로 **RTL 설계 및 합성**을 진행하고, 이를 �
 
 ### 💻 개발 환경 <br>
 
-| **모델링 및 알고리즘 설계** | MATLAB (Floating/Fixed-point 모델링 및 High-level verification)|
---|--
-**시뮬레이션 및 검증**|  Synopsys VCS (RTL 및 게이트 레벨 논리 시뮬레이션) <br> Synopsys Verdi (파형 분석 및 디버깅)|
-**개발 툴 및 편집기**|   MobaXterm (원격 개발 환경) <br> Visual Studio Code (RTL 및 스크립트 편집)
-**합성 및 게이트 시뮬레이션**| Synopsys Design Compiler (합성) <br> Synopsys VCS/Verdi (게이트 레벨 시뮬레이션)
-**FPGA 타겟팅**| Xilinx Vivado (Bitstream 생성 및 FPGA 구현)
-**하드웨어 플랫폼**| Avnet UltraZed-7EV Carrier Card
+| 구분                 | 툴                                                                    | 사용 목적                                              |
+| ------------------ | -------------------------------------------------------------------- | -------------------------------------------------- |
+| **모델링 및 알고리즘 설계**  | MATLAB                                                               | Floating/Fixed-point 모델링 및 High-level verification |
+| **RTL 설계 및 시뮬레이션** | Synopsys VCS                                                         | RTL 시뮬레이션                                          |
+|                    | Synopsys Verdi                                                       | 파형 분석 및 디버깅                                        |
+| **합성 및 게이트 시뮬레이션** | Synopsys Design Compiler (합성) <br> Synopsys VCS/Verdi (게이트 레벨 시뮬레이션) | Timing, Area, Latency 분석 및 검증                      |
+| **FPGA 타겟팅**       | Xilinx Vivado                                                        | Bitstream 생성 및 FPGA 구현                             |
+| **개발 환경 툴**        | MobaXterm                                                            | 원격 개발 환경 (터미널, 파일 전송)                              |
+|                    | Visual Studio Code                                                   | RTL 및 스크립트 편집기                                     |
+| **하드웨어 플랫폼**       | Avnet UltraZed-EV SoM <br> UltraZed-7EV Carrier Card                 | FPGA 보드                                         |
+
 
 - **모델링 및 알고리즘 설계**
   - MATLAB (Floating/Fixed-point 모델링 및 High-level verification)
