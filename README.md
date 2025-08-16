@@ -117,14 +117,14 @@ CBFP 모델을 기반으로 **RTL 설계 및 합성**을 진행하고, 이를 �
 
 ### ✳️ 성능 향상
 
-<img src="/History/img/img76.png" width=800>|
+<img src="/History/img/img76.png" width=600>|
 --|
 
 
 
 ## (2) RTL Simulation [[코드 분석]](/History/Progress_report/rtl.md)
 
-<img src="/History/img/img77.png" width=500>|<img src="/History/img/img78.png" width=500>|
+<img src="/History/img/img77.png" width=300>|<img src="/History/img/img78.png" width=300>|
 --|--
 
 
