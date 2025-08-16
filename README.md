@@ -117,16 +117,15 @@ CBFP 모델을 기반으로 **RTL 설계 및 합성**을 진행하고, 이를 �
 
 ### ✳️ 성능 향상
 
-<img src="/History/img/img76.png" width=1000>|
+<img src="/History/img/img76.png" width=800>|
 --|
 
 
 
 ## (2) RTL Simulation [[코드 분석]](/History/Progress_report/rtl.md)
 
-<img src="/History/img/img77.png" width=1000>|
---|
-<img src="/History/img/img78.png" width=1000>|
+<img src="/History/img/img77.png" width=500>|<img src="/History/img/img78.png" width=500>|
+--|--
 
 
 
@@ -167,10 +166,11 @@ Timing_max|Timing_min| Area
 ## (5) FPGA Targeting
 
 |LUT|Setup-time|Latency|
+--|--|--
 65538 (30%)| 0.576 ns| 89 clk|
 
 <img src="/History/img/img79.png" width=500> |- LUT 30% 사용 -> Combinational Logic ↑<br>- FF, DSP 약 10% -> 적정 Pipelining, Multiplier
---|
+--|--
 <img src="/History/img/img80.png" width=500> |Setup Time & Hold Time Slack MET
 
 
