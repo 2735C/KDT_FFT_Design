@@ -92,9 +92,6 @@ CBFP 모델을 기반으로 **RTL 설계 및 합성**을 진행하고, 이를 �
 
 ### ➤ BFP vs CBFP
 
-|<img src="/History/img/img74.png" width=500>|<img src="/History/img/img75.png" width=500>
---|--
-
 ### 📉 기존 기법: BFP (Block Floating Point)
 
 🍬  <u>**FFT 출력 데이터**를 메모리에 저장하기 전에, 그 블록의 최대 진폭을 기준으로 **공통 지수(exponent)** 를 정하고, 해당 지수에 따라 모든 데이터를 **스케일링**.</u>
@@ -115,16 +112,19 @@ CBFP 모델을 기반으로 **RTL 설계 및 합성**을 진행하고, 이를 �
 
 🍫 이전 스테이지의 일부 출력값만으로 다음 스테이지 지수를 결정할 수 있음.
 
+|<img src="/History/img/img74.png" width=300>|<img src="/History/img/img75.png" width=300>
+--|--
+
 ### ✳️ 성능 향상
 
-<img src="/History/img/img76.png" width=600>|
+<img src="/History/img/img76.png" width=700>|
 --|
 
 
 
 ## (2) RTL Simulation [[코드 분석]](/History/Progress_report/rtl.md)
 
-<img src="/History/img/img77.png" width=300>|<img src="/History/img/img78.png" width=300>|
+<img src="/History/img/img77.png" width=500>|<img src="/History/img/img78.png" width=500>|
 --|--
 
 
@@ -150,7 +150,7 @@ Timing_max|Timing_min| Area
 
 
 
-## (5) FPGA Targeting [[결과 분석]](/History/Progress_report/gate.md)
+## (5) FPGA Targeting [[결과 분석]](/History/Progress_report/fpga.md)
 
 |LUT|Setup-time|Latency|
 --|--|--
