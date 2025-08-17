@@ -11,9 +11,9 @@ register들의 reset 조건을 수정하고 불필요한 register를 제거하�
 
 각 모듈과 step에서 동작을 제어하기 위한 제어 신호들의 else 조건의 부재 때문에 주요 cnt 값들이 증가하지 않았다. <br>
 
-<img src="/History/img/img160.png" width=450> 
+<img src="/History/img/img160.png" width=350> 
 
-<img src="/History/img/img161.png" width=300> 
+<img src="/History/img/img161.png" width=250> 
 
 이후, 합성을 반복해보며 X가 발생하는 net들을 추적하였고, 주로 Indexsum, CBFP, Reordering 같은 모듈에서 처리가 미흡하였다. <br>
 
