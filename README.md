@@ -138,8 +138,20 @@ CBFP 모델을 기반으로 **RTL 설계 및 합성**을 진행하고, 이를 �
 
 ➡️ **Radix-2² FFT**는 **Radix-2의 단순 구조**(덧셈/뺄셈 기반)를 유지하면서, 두 단계의 연산을 묶어 **Radix-4**처럼 4개씩 처리하여 **연산량**을 줄이고 일부 Twiddle factor 곱셈을 단순화하여 하드웨어 효율을 높이는 구조
 
-<img src="/History/img/img77.png" width=500>|
+<img src="/History/img/img77.png" width=700>|
 --|
+
+```matlab
+for kk=1:2
+  for nn=1:128
+    bfly01_tmp((kk-1)*256+nn) = bfly00((kk-1)*256+nn) + bfly00((kk-1)*256+128+nn);
+    bfly01_tmp((kk-1)*256+128+nn) = bfly00((kk-1)*256+nn) - bfly00((kk-1)*256+128+nn);
+  end
+end
+```
+
+- Radix-2 단계 2개를 한 블록에서 연속 계산
+- 즉, 덧셈/뺄셈을 한 블록 안에서 한 번에 처리함으로써 stage가 줄고, 일부 twiddle factor는 단순 곱셈으로 처리 가능 → 하드웨어 효율 ↑ 
 
 
 > **고정 소수점 사용**  
@@ -164,7 +176,7 @@ CBFP 모델을 기반으로 **RTL 설계 및 합성**을 진행하고, 이를 �
 
 Timing_max| Area
 --|--
-|<img src="/History/img/img70.png" width=500>| <img src="/History/img/img72.png" width=500>|
+|<img src="/History/img/img70.png" width=400>| <img src="/History/img/img72.png" width=400>|
 
 > Hold time은 Layout 단계에서 충분히 해결 가능하므로 front-end 과정에서는 Setup time과 Area 최적화에 집중하였다.
 
@@ -185,7 +197,7 @@ Timing_max| Area
 
 ## 진행 결과
 
-<img src="/History/img/img81.png" width=1000>|
+<img src="/History/img/img81.png" width=700>|
 --|
 
 ## 🚀Trouble Shooting 
