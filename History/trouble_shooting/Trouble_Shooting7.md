@@ -1,6 +1,6 @@
 [FPGA SetUp Trouble]
 
-<img src="/History/img/img162.png" width=800> 
+<img src="/History/img/img162.png" width=700> 
 
 Vivado Implementation 과정에서 Bitstream을 생성하던 중, bfly02 → cbfp0 cnt_reg 경로에서 지속적으로 Negative Slack이 발생하였다.
 
