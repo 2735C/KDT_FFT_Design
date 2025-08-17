@@ -8,13 +8,13 @@ Vivado Implementation 과정에서 Bitstream을 생성하던 중, bfly02 → cbf
 
 이 문제를 해결하기 위해 해당 Path의 코드를 집중적으로 분석한 결과, cbfp에서 사용한 function이 주요 원인임을 확인하였다.
 
-<img src="/History/img/img163.png" width=500> 
+<img src="/History/img/img163.png" width=600> 
 
 기존 cbfp0에서는 min_detect function을 사용했는데, 이 함수는 din의 real 값과 imaginary 값을 묶어 [0:31] 배열 형태의 input({din_re, din_im})을 받도록 설계되어 있었다. 함수 내부에서 다수의 삼항 연산자를 사용했는데, 이 과정에서 지나치게 많은 배열이 MUX로 연결되며 Negative Slack을 유발한 것이다.
 
-<img src="/History/img/img164.png" width=500> 
+<img src="/History/img/img164.png" width=600> 
 
-<img src="/History/img/img165.png" width=500> 
+<img src="/History/img/img165.png" width=550> 
 
 1. 입력 크기 축소
 
