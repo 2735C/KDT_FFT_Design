@@ -120,29 +120,31 @@ CBFP 모델을 기반으로 **RTL 설계 및 합성**을 진행하고, 이를 �
 ### ✳️ 성능 향상
 
 <table style="border-collapse: collapse; border: 3px solid black;" cellpadding="5">
+  <!-- SQNR 헤더 -->
   <tr style="height:40px;">
-    <th rowspan="3" style="background-color:white; border: 3px solid black;"> </th>
+    <th rowspan="3" style="background-color:white;"> </th>
     <th colspan="4" style="background-color:#2e5902; color:white; text-align:center;">SQNR(dB)</th>
   </tr>
   <tr style="height:40px;">
-    <th colspan="2" style="background-color:#8fcf6d; text-align:center; border: 3px solid black;">FFT</th>
-    <th colspan="2" style="background-color:#8fcf6d; text-align:center; border: 3px solid black;">IFFT</th>
+    <th colspan="2" style="background-color:#8fcf6d; text-align:center;">FFT</th>
+    <th colspan="2" style="background-color:#8fcf6d; text-align:center;">IFFT</th>
   </tr>
   <tr style="height:40px;">
-    <th style="text-align:center; border: 3px solid black;">No CBFP</th>
-    <th style="text-align:center; border: 3px solid black;">CBFP</th>
-    <th style="text-align:center; border: 3px solid black;">No CBFP</th>
-    <th style="text-align:center; border: 3px solid black;">CBFP</th>
+    <th style="text-align:center;">No CBFP</th>
+    <th style="text-align:center;">CBFP</th>
+    <th style="text-align:center;">No CBFP</th>
+    <th style="text-align:center;">CBFP</th>
   </tr>
+  <!-- 데이터 행 -->
   <tr style="height:40px;">
-    <td style="text-align:center; border: 3px solid black;"><b>Random</b></td>
+    <td style="text-align:center;"><b>Random</b></td>
     <td style="text-align:center;">26.46 dB</td>
     <td style="text-align:center;">40.84 dB</td>
     <td style="text-align:center;">0.024 dB</td>
     <td style="text-align:center;">44.2 dB</td>
   </tr>
   <tr style="height:40px;">
-    <td style="text-align:center; border: 3px solid black;"><b>Cosine</b></td>
+    <td style="text-align:center;"><b>Cosine</b></td>
     <td style="text-align:center;">41.03 dB</td>
     <td style="text-align:center;">40.83 dB</td>
     <td style="text-align:center;">0.034 dB</td>
@@ -223,7 +225,7 @@ end
 
 |Setup_time| Area|Latency
 --|--|--
-<div align = "middle"> 0.14 ps|<div align = "middle"> 187768.2| <div align = "middle"> 89 clk
+|<div align = "middle"> 0.14 ps|<div align = "middle"> 187768.2| <div align = "middle"> 89 clk|
 
 
 Timing_max| Area
@@ -240,7 +242,7 @@ Timing_max| Area
 
 |LUT|Setup-time|Latency|
 --|--|--
-<div align = "middle">65538 (30%)| <div align = "middle"> 0.576 ns|<div align = "middle"> 89 clk|
+|<div align = "middle">65538 (30%)| <div align = "middle"> 0.576 ns|<div align = "middle"> 89 clk|
 
 <img src="/History/img/img79.png" width=500> |<div align = "left"><div align = "left">- LUT 30% 사용 -> Combinational Logic ↑<br><br>- FF, DSP 약 10% -> 적정 Pipelining, Multiplier
 --|--
