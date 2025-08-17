@@ -154,18 +154,36 @@ CBFP 모델을 기반으로 **RTL 설계 및 합성**을 진행하고, 이를 �
 
 ### 🧐 **사용된 하드웨어 기법**
 
-> **파이프라인 구조**  
+> ### :one: **파이프라인 구조**  
 
 : FFT의 각 스테이지를 클럭마다 연속적으로 처리 가능
 
-> **Cooley-Tukey 구조 최적화**
+> ### :two: **Cooley-Tukey 구조 최적화**
 
 : Radix-2² 구조 사용
 
 ➡️ **Radix-2² FFT**는 **Radix-2의 단순 구조**(덧셈/뺄셈 기반)를 유지하면서, 두 단계의 연산을 묶어 **Radix-4**처럼 4개씩 처리하여 **연산량**을 줄이고 일부 Twiddle factor 곱셈을 단순화하여 하드웨어 효율을 높이는 구조
 
-<img src="/History/img/img77.png" width=700>|
---|
+<img src="/History/img/img77.png" width=600>|<div align = "left">✅BF I: 덧셈/뺄셈 중심 + 단순 Twiddle factor (1, -1, j, -j) <br> → 곱셈기가 거의 필요 없음 <br> ☑️BF II: 덧셈/뺄셈 + 일반 Twiddle factor 곱 <br> → 곱셈기가 필요한 연산만 집중 <br> ➡️ 즉, 복잡한 곱셈을 최소화하고, 단순 연산만 따로 처리 가능
+--|--
+
+- **BF I와 BF II를 블록 단위로 나누면 HW 효율을 높일 수 있다**
+
+  - 멀티플라이어 사용량을 줄일 수 있음
+
+  - 연산 파이프라인 설계가 용이
+
+  - 클럭 사이클을 절약 가능
+
+- **디버깅과 검증 용이하다**
+
+  - BF I / BF II 블록 구분 → 연산 단계를 명확히 확인 가능
+
+  - Fixed-point 변환 후 정확도 확인이 쉬움
+
+
+🎉 즉, **BF I / BF II 블록 구분** = **연산 단순화 + 하드웨어 최적화 + 병렬화 용이 + 검증 편리성**을 동시에 얻는 구조
+
 
 ```matlab
 for kk=1:2
@@ -180,13 +198,13 @@ end
 - 즉, 덧셈/뺄셈을 한 블록 안에서 한 번에 처리함으로써 stage가 줄고, 일부 twiddle factor는 단순 곱셈으로 처리 가능 → 하드웨어 효율 ↑ 
 
 
-> **고정 소수점 사용**  
+> ### :three: **고정 소수점 사용**  
 
 : 부동소수점 대비 면적/전력 절감 + Precision trade-off 가능
 
 ➡️ **BFP**는 블록 단위로 **공통 스케일**을 사용하는 반면, **CBFP**는 **블록** 내 작은 값들의 여유 비트를 활용해 **Q-format을 조정**함으로써 **라운딩 오차를 줄이고 정밀도 향상**이 가능
 
-> **LUT 사용**  
+> ### :four: **LUT 사용**  
 
 : twiddle factor를 ROM에 미리 저장하여 곱셈 비용 절감
 
@@ -223,8 +241,51 @@ Timing_max| Area
 
 ## 진행 결과
 
-<img src="/History/img/img81.png" width=700>|
---|
+<table border="1" cellspacing="0" cellpadding="5">
+  <thead>
+    <tr>
+      <th>구분</th>
+      <th>검증 항목</th>
+      <th>검증 요소</th>
+      <th>완료 여부</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="3">ASIC (500MHz)</td>
+      <td>RTL Simulation</td>
+      <td>Cosine, Random Fixed Data</td>
+      <td style="text-align:center;">○</td>
+    </tr>
+    <tr>
+      <td>Synthesis</td>
+      <td>Setup Violation, Area</td>
+      <td style="text-align:center;">○</td>
+    </tr>
+    <tr>
+      <td>Gate Simulation</td>
+      <td>Cosine, Random Fixed Data</td>
+      <td style="text-align:center;">○</td>
+    </tr>
+    <tr>
+      <td rowspan="3">FPGA (100MHz)</td>
+      <td>FPGA top Block</td>
+      <td>Cosine generator, FFT, VIO</td>
+      <td style="text-align:center;">○</td>
+    </tr>
+    <tr>
+      <td>RTL Simulation</td>
+      <td>Cosine Fixed Data</td>
+      <td style="text-align:center;">○</td>
+    </tr>
+    <tr>
+      <td>Synthesis & Implementation</td>
+      <td>Setup Violation, Utilization, Bitstream</td>
+      <td style="text-align:center;">○</td>
+    </tr>
+  </tbody>
+</table>
+
 
 ## 🚀Trouble Shooting 
 [⚒️[Timing Miss Match Trouble]](/History/trouble_shooting/Trouble_Shooting1.md)   <br>
