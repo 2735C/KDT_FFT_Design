@@ -13,7 +13,7 @@ register들의 reset 조건을 수정하고 불필요한 register를 제거하�
 
 <img src="/History/img/img160.png" width=500> 
 
-<img src="/History/img/img161.png" width=500> 
+<img src="/History/img/img161.png" width=300> 
 
 이후, 합성을 반복해보며 X가 발생하는 net들을 추적하였고, 주로 Indexsum, CBFP, Reordering 같은 모듈에서 처리가 미흡하였다. <br>
 
