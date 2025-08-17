@@ -166,7 +166,7 @@ CBFP 모델을 기반으로 **RTL 설계 및 합성**을 진행하고, 이를 �
 
 ➡️ **Radix-2² FFT**는 **Radix-2의 단순 구조**(덧셈/뺄셈 기반)를 유지하면서, 두 단계의 연산을 묶어 **Radix-4**처럼 4개씩 처리하여 **연산량**을 줄이고 일부 Twiddle factor 곱셈을 단순화하여 하드웨어 효율을 높이는 구조
 
-<img src="/History/img/img77.png" width=600>|<div align = "left">✅BF I: 덧셈/뺄셈 중심 + 단순 Twiddle factor (1, -1, j, -j) <br> → 곱셈기가 거의 필요 없음 <br><br> ☑️BF II: 덧셈/뺄셈 + 일반 Twiddle factor 곱 <br> → 곱셈기가 필요한 연산만 집중 <br><br> ➡️ 즉, 복잡한 곱셈을 최소화하고, 단순 연산만 따로 처리 가능
+<img src="/History/img/img77.png" width=600>|<div align = "left">✅BF I: 덧셈/뺄셈 중심 + 단순 Twiddle factor (1, -1) <br> → 곱셈기가 거의 필요 없음 <br><br> ☑️BF II: 덧셈/뺄셈 + 일반 Twiddle factor 곱 <br> → 곱셈기가 필요한 연산만 집중 <br><br> ➡️ 즉, 복잡한 곱셈을 최소화하고, 단순 연산만 따로 처리 가능
 --|--
 
 - **BF I와 BF II를 블록 단위로 나누면 HW 효율을 높일 수 있다.**
@@ -187,9 +187,10 @@ CBFP 모델을 기반으로 **RTL 설계 및 합성**을 진행하고, 이를 �
 🎉 즉, **BF I / BF II 블록 구분** = **연산 단순화 + 하드웨어 최적화 + 병렬화 용이 + 검증 편리성**을 동시에 얻는 구조
 <br>
 
-> **Matlab**
+> **BF I Matlab(add/sub)**
 
 ```matlab
+% M0 step1 
 for kk=1:2
   for nn=1:128
     bfly01_tmp((kk-1)*256+nn) = bfly00((kk-1)*256+nn) + bfly00((kk-1)*256+128+nn);
@@ -198,15 +199,87 @@ for kk=1:2
 end
 ```
 
+> **BF I RTL(add/sub)**
+
+```systemverilog
+// M0 step1 
+if((step1_shift_type == 1) && step1_add_sub_en) begin
+    for(j = 0; j < 16; j++) begin
+        add_step01_re_pp_np[j] <= sr128_re_out[j] + bfly00_re_p[j];
+        sub_step01_re_pn_nn[j] <= sr128_re_out[j] - bfly00_re_p[j];
+        add_step01_im_pp_np[j] <= sr128_im_out[j] + bfly00_im_p[j];
+        sub_step01_im_pn_nn[j] <= sr128_im_out[j] - bfly00_im_p[j];
+    end
+end else if ((step1_shift_type == 3) && step1_add_sub_en) begin
+    for (j = 0; j < 16; j++) begin
+        add_step01_re_pp_np[j] <= sr128_re_out[j] + sr256_re_out[j];
+        sub_step01_re_pn_nn[j] <= sr128_re_out[j] - sr256_re_out[j];
+        add_step01_im_pp_np[j] <= sr128_im_out[j] + sr256_im_out[j];
+        sub_step01_im_pn_nn[j] <= sr128_im_out[j] - sr256_im_out[j];
+    end                
+end
+```
+
 - Radix-2 단계 2개를 한 블록에서 연속 계산
 - 즉, 덧셈/뺄셈을 한 블록 안에서 한 번에 처리함으로써 stage가 줄고, 일부 twiddle factor는 단순 곱셈으로 처리 가능 → 하드웨어 효율 ↑ 
 
-> **RTL**
+> **BF II Matlab(multiplication)** 
 
-```systemverilog
+```matlab
+% M0 step1 
+ fac8_2 = [1, 1, 1, -j, 1, 0.7071-0.7071j, 1, -0.7071-0.7071j]; % floating 
+ fac8_1 = round(fac8_2 * 256); % fixed <2.8>
 
+ for nn=1:512
+	temp_bfly01(nn) = bfly01_tmp(nn)*fac8_1(ceil(nn/64));  %INPUT <5.6> X <2.8> -> OUTPUT <7.14>
+	bfly01(nn) = round(temp_bfly01(nn)/256); % <7.6>
+ end
 ```
 
+| nn 범위           | 1\~64 | 65\~128 | 129\~192 | 193\~256 | 257\~320 | 321\~384       | 385\~448 | 449\~512        |
+| ---------------- | ----- | ------- | -------- | -------- | -------- | -------------- | -------- | --------------- |
+| ceil(nn/64)      | 1     | 2       | 3        | 4        | 5        | 6              | 7        | 8               |
+| factor (fac8\_1) | 1     | 1       | 1        | -j       | 1        | 0.7071-0.7071j | 1        | -0.7071-0.7071j |
+
+
+
+> **BF II RTL(multiplication)**
+
+```systemverilog
+// M0 step1 
+if(step1_mul_en) begin // twf factor multiply <5.6> * <1.8> = <6.14>
+  index_cnt <= index_cnt + 1;
+  if(index_cnt < 4) begin
+      for(j = 0; j < 16; j++) begin
+          bfly01_re_p[j] <= ((add_step01_re_pp_np[j] <<< 8) + 128) >>> 8;
+          bfly01_re_n[j] <= ((sub_step01_re_pn_nn[j] <<< 8) + 128) >>> 8;
+          bfly01_im_p[j] <= ((add_step01_im_pp_np[j] <<< 8) + 128) >>> 8;
+          bfly01_im_n[j] <= ((sub_step01_im_pn_nn[j] <<< 8) + 128) >>> 8;
+      end
+  end else if(index_cnt < 8) begin
+      for(j = 0; j < 16; j++) begin
+          bfly01_re_p[j] <= ((add_step01_re_pp_np[j] <<< 8) + 128) >>> 8;
+          bfly01_re_n[j] <= ((sub_step01_im_pn_nn[j] <<< 8) + 128) >>> 8;
+          bfly01_im_p[j] <= ((add_step01_im_pp_np[j] <<< 8) + 128) >>> 8;
+          bfly01_im_n[j] <= (-(sub_step01_re_pn_nn[j] <<< 8) + 128) >>> 8;
+      end
+  end else if(index_cnt < 12) begin
+      for(j = 0; j < 16; j++) begin
+          bfly01_re_p[j] <= ((add_step01_re_pp_np[j] <<< 8) + 128) >>> 8;
+          bfly01_re_n[j] <= ((sub_step01_re_pn_nn[j] <<< 8) + 128) >>> 8;
+          bfly01_im_p[j] <= ((add_step01_im_pp_np[j] <<< 8) + 128) >>> 8;
+          bfly01_im_n[j] <= ((sub_step01_im_pn_nn[j] <<< 8) + 128) >>> 8;
+      end
+  end else if(index_cnt < 16) begin
+      for(j = 0; j < 16; j++) begin
+          bfly01_re_p[j] <= (mul181(add_step01_re_pp_np[j]) + mul181(add_step01_im_pp_np[j]) + 128) >>> 8;
+          bfly01_re_n[j] <= (mul_neg181(sub_step01_re_pn_nn[j]) + mul181(sub_step01_im_pn_nn[j]) + 128) >>> 8;
+          bfly01_im_p[j] <= (mul181(add_step01_im_pp_np[j]) - mul181(add_step01_re_pp_np[j]) + 128) >>> 8;
+          bfly01_im_n[j] <= (mul_neg181(sub_step01_im_pn_nn[j]) - mul181(sub_step01_re_pn_nn[j]) + 128) >>> 8;
+      end
+  end
+end
+```
 
 > ### :three: **고정 소수점 사용**  
 
