@@ -122,8 +122,30 @@ CBFP 모델을 기반으로 **RTL 설계 및 합성**을 진행하고, 이를 �
 <img src="/History/img/img76.png" width=650>|
 --|
 
-
-
+<table>
+  <tr>
+    <th rowspan="2" style="background-color:white;"></th>
+    <th colspan="4" style="background-color:#2e5902; color:white; text-align:center;">SQNR(dB)</th>
+  </tr>
+  <tr>
+    <th colspan="2" style="background-color:#8fcf6d; text-align:center;">FFT</th>
+    <th colspan="2" style="background-color:#8fcf6d; text-align:center;">IFFT</th>
+  </tr>
+  <tr>
+    <td style="background-color:#6bb36a; text-align:center;"><b>Random</b></td>
+    <td style="background-color:#d9ead3; text-align:center;">26.46 dB</td>
+    <td style="background-color:#d9ead3; text-align:center;">40.84 dB</td>
+    <td style="background-color:#d9ead3; text-align:center;">0.024 dB</td>
+    <td style="background-color:#d9ead3; text-align:center;">44.2 dB</td>
+  </tr>
+  <tr>
+    <td style="background-color:#6bb36a; text-align:center;"><b>Cosine</b></td>
+    <td style="background-color:#d9ead3; text-align:center;">41.03 dB</td>
+    <td style="background-color:#d9ead3; text-align:center;">40.83 dB</td>
+    <td style="background-color:#d9ead3; text-align:center;">0.034 dB</td>
+    <td style="background-color:#d9ead3; text-align:center;">41.2 dB</td>
+  </tr>
+</table>
 ## (2) RTL Simulation [[코드 분석]](/History/Progress_report/rtl.md)
 
 ### 🧐 **사용된 하드웨어 기법**
