@@ -2,9 +2,7 @@
 
 <img src="/History/img/img153.png" width=500> 
 
-<img src="/History/img/img154.png" width=500>
-
-<img src="/History/img/img155.png" width=400>
+<img src="/History/img/img154.png" width=500> <img src="/History/img/img155.png" width=400>
 
 <img src="/History/img/img152.png" width=1000>
 
