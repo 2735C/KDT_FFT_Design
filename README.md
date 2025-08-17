@@ -119,34 +119,34 @@ CBFP 모델을 기반으로 **RTL 설계 및 합성**을 진행하고, 이를 �
 
 ### ✳️ 성능 향상
 
-<table style="width:80%; border-collapse:collapse; font-size:14px;">
+<table style="border-collapse: collapse; border: 3px solid black;" cellpadding="5">
   <tr style="height:40px;">
-    <th rowspan="3" style="background-color:white;"></th>
+    <th rowspan="3" style="background-color:white; border: 3px solid black;"> </th>
     <th colspan="4" style="background-color:#2e5902; color:white; text-align:center;">SQNR(dB)</th>
   </tr>
   <tr style="height:40px;">
-    <th colspan="2" style="background-color:#8fcf6d; text-align:center;">FFT</th>
-    <th colspan="2" style="background-color:#8fcf6d; text-align:center;">IFFT</th>
+    <th colspan="2" style="background-color:#8fcf6d; text-align:center; border: 3px solid black;">FFT</th>
+    <th colspan="2" style="background-color:#8fcf6d; text-align:center; border: 3px solid black;">IFFT</th>
   </tr>
   <tr style="height:40px;">
-    <th style="background-color:#8fcf6d; text-align:center;">No CBFP</th>
-    <th style="background-color:#8fcf6d; text-align:center;">CBFP</th>
-    <th style="background-color:#8fcf6d; text-align:center;">No CBFP</th>
-    <th style="background-color:#8fcf6d; text-align:center;">CBFP</th>
+    <th style="text-align:center; border: 3px solid black;">No CBFP</th>
+    <th style="text-align:center; border: 3px solid black;">CBFP</th>
+    <th style="text-align:center; border: 3px solid black;">No CBFP</th>
+    <th style="text-align:center; border: 3px solid black;">CBFP</th>
   </tr>
   <tr style="height:40px;">
-    <td style="background-color:#6bb36a; text-align:center;"><b>Random</b></td>
-    <td style="background-color:#d9ead3; text-align:center;">26.46 dB</td>
-    <td style="background-color:#d9ead3; text-align:center;">40.84 dB</td>
-    <td style="background-color:#d9ead3; text-align:center;">0.024 dB</td>
-    <td style="background-color:#d9ead3; text-align:center;">44.2 dB</td>
+    <td style="text-align:center; border: 3px solid black;"><b>Random</b></td>
+    <td style="text-align:center;">26.46 dB</td>
+    <td style="text-align:center;">40.84 dB</td>
+    <td style="text-align:center;">0.024 dB</td>
+    <td style="text-align:center;">44.2 dB</td>
   </tr>
   <tr style="height:40px;">
-    <td style="background-color:#6bb36a; text-align:center;"><b>Cosine</b></td>
-    <td style="background-color:#d9ead3; text-align:center;">41.03 dB</td>
-    <td style="background-color:#d9ead3; text-align:center;">40.83 dB</td>
-    <td style="background-color:#d9ead3; text-align:center;">0.034 dB</td>
-    <td style="background-color:#d9ead3; text-align:center;">41.2 dB</td>
+    <td style="text-align:center; border: 3px solid black;"><b>Cosine</b></td>
+    <td style="text-align:center;">41.03 dB</td>
+    <td style="text-align:center;">40.83 dB</td>
+    <td style="text-align:center;">0.034 dB</td>
+    <td style="text-align:center;">41.2 dB</td>
   </tr>
 </table>
 
@@ -164,10 +164,10 @@ CBFP 모델을 기반으로 **RTL 설계 및 합성**을 진행하고, 이를 �
 
 ➡️ **Radix-2² FFT**는 **Radix-2의 단순 구조**(덧셈/뺄셈 기반)를 유지하면서, 두 단계의 연산을 묶어 **Radix-4**처럼 4개씩 처리하여 **연산량**을 줄이고 일부 Twiddle factor 곱셈을 단순화하여 하드웨어 효율을 높이는 구조
 
-<img src="/History/img/img77.png" width=600>|<div align = "left">✅BF I: 덧셈/뺄셈 중심 + 단순 Twiddle factor (1, -1, j, -j) <br> → 곱셈기가 거의 필요 없음 <br> ☑️BF II: 덧셈/뺄셈 + 일반 Twiddle factor 곱 <br> → 곱셈기가 필요한 연산만 집중 <br> ➡️ 즉, 복잡한 곱셈을 최소화하고, 단순 연산만 따로 처리 가능
+<img src="/History/img/img77.png" width=600>|<div align = "left">✅BF I: 덧셈/뺄셈 중심 + 단순 Twiddle factor (1, -1, j, -j) <br> → 곱셈기가 거의 필요 없음 <br><br> ☑️BF II: 덧셈/뺄셈 + 일반 Twiddle factor 곱 <br> → 곱셈기가 필요한 연산만 집중 <br><br> ➡️ 즉, 복잡한 곱셈을 최소화하고, 단순 연산만 따로 처리 가능
 --|--
 
-- **BF I와 BF II를 블록 단위로 나누면 HW 효율을 높일 수 있다**
+- **BF I와 BF II를 블록 단위로 나누면 HW 효율을 높일 수 있다.**
 
   - 멀티플라이어 사용량을 줄일 수 있음
 
@@ -175,7 +175,7 @@ CBFP 모델을 기반으로 **RTL 설계 및 합성**을 진행하고, 이를 �
 
   - 클럭 사이클을 절약 가능
 
-- **디버깅과 검증 용이하다**
+- **디버깅과 검증 용이하다.**
 
   - BF I / BF II 블록 구분 → 연산 단계를 명확히 확인 가능
 
@@ -183,7 +183,9 @@ CBFP 모델을 기반으로 **RTL 설계 및 합성**을 진행하고, 이를 �
 
 
 🎉 즉, **BF I / BF II 블록 구분** = **연산 단순화 + 하드웨어 최적화 + 병렬화 용이 + 검증 편리성**을 동시에 얻는 구조
+<br>
 
+> **Matlab**
 
 ```matlab
 for kk=1:2
@@ -197,6 +199,12 @@ end
 - Radix-2 단계 2개를 한 블록에서 연속 계산
 - 즉, 덧셈/뺄셈을 한 블록 안에서 한 번에 처리함으로써 stage가 줄고, 일부 twiddle factor는 단순 곱셈으로 처리 가능 → 하드웨어 효율 ↑ 
 
+> **RTL**
+
+```systemverilog
+
+```
+
 
 > ### :three: **고정 소수점 사용**  
 
@@ -208,14 +216,14 @@ end
 
 : twiddle factor를 ROM에 미리 저장하여 곱셈 비용 절감
 
-### 시뮬 사진 
+### 😎 RTL Simulation
 
 
 ## (3) Synthesis
 
 |Setup_time| Area|Latency
 --|--|--
-0.14 ps| 187768.2| 89 clk
+<div align = "middle"> 0.14 ps|<div align = "middle"> 187768.2| <div align = "middle"> 89 clk
 
 
 Timing_max| Area
@@ -232,9 +240,9 @@ Timing_max| Area
 
 |LUT|Setup-time|Latency|
 --|--|--
-65538 (30%)| 0.576 ns| 89 clk|
+<div align = "middle">65538 (30%)| <div align = "middle"> 0.576 ns|<div align = "middle"> 89 clk|
 
-<img src="/History/img/img79.png" width=500> |<div align = "left">- LUT 30% 사용 -> Combinational Logic ↑<br>- FF, DSP 약 10% -> 적정 Pipelining, Multiplier
+<img src="/History/img/img79.png" width=500> |<div align = "left"><div align = "left">- LUT 30% 사용 -> Combinational Logic ↑<br><br>- FF, DSP 약 10% -> 적정 Pipelining, Multiplier
 --|--
 <img src="/History/img/img80.png" width=500> |- **Setup Time & Hold Time Slack MET** |
 
