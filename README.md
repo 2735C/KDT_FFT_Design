@@ -92,7 +92,7 @@ CBFP 모델을 기반으로 **RTL 설계 및 합성**을 진행하고, 이를 �
 
 ### ➤ BFP vs CBFP
 
-|<img src="/History/img/img74.png" width=350>|<img src="/History/img/img75.png" width=350>
+|<img src="/History/img/img74.png" width=300>|<img src="/History/img/img75.png" width=300>
 --|--
 
 ### 📉 기존 기법: BFP (Block Floating Point)
@@ -118,9 +118,6 @@ CBFP 모델을 기반으로 **RTL 설계 및 합성**을 진행하고, 이를 �
 ##
 
 ### ✳️ 성능 향상
-
-<img src="/History/img/img76.png" width=650>|
---|
 
 <table style="width:80%; border-collapse:collapse; font-size:14px;">
   <tr style="height:40px;">
