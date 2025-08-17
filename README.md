@@ -115,7 +115,7 @@ CBFP 모델을 기반으로 **RTL 설계 및 합성**을 진행하고, 이를 �
 
 🍫 이전 스테이지의 일부 출력값만으로 다음 스테이지 지수를 결정할 수 있음.
 
-
+##
 
 ### ✳️ 성능 향상
 
@@ -126,11 +126,31 @@ CBFP 모델을 기반으로 **RTL 설계 및 합성**을 진행하고, 이를 �
 
 ## (2) RTL Simulation [[코드 분석]](/History/Progress_report/rtl.md)
 
-<img src="/History/img/img77.png" width=500>|<img src="/History/img/img78.png" width=500>|
---|--
+### 🧐 **사용된 하드웨어 기법**
+
+> **파이프라인 구조**  
+
+: FFT의 각 스테이지를 클럭마다 연속적으로 처리 가능
+
+> **Cooley-Tukey 구조 최적화**
+
+: Radix-2² 구조 사용
+
+➡️ **Radix-2² FFT**는 **Radix-2의 단순 구조**(덧셈/뺄셈 기반)를 유지하면서, 두 단계의 연산을 묶어 **Radix-4**처럼 4개씩 처리하여 **연산량**을 줄이고 일부 Twiddle factor 곱셈을 단순화하여 하드웨어 효율을 높이는 구조
+
+<img src="/History/img/img77.png" width=500>|
+--|
 
 
+> **고정 소수점 사용**  
 
+: 부동소수점 대비 면적/전력 절감 + Precision trade-off 가능
+
+➡️ **BFP**는 블록 단위로 **공통 스케일**을 사용하는 반면, **CBFP**는 **블록** 내 작은 값들의 여유 비트를 활용해 **Q-format을 조정**함으로써 **라운딩 오차를 줄이고 정밀도 향상**이 가능
+
+> **LUT 사용**  
+
+: twiddle factor를 ROM에 미리 저장하여 곱셈 비용 절감
 
 ### 시뮬 사진 
 
