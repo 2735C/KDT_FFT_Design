@@ -11,7 +11,7 @@ register들의 reset 조건을 수정하고 불필요한 register를 제거하�
 
 각 모듈과 step에서 동작을 제어하기 위한 제어 신호들의 else 조건의 부재 때문에 주요 cnt 값들이 증가하지 않았다. <br>
 
-<img src="/History/img/img160.png" width=500> 
+<img src="/History/img/img160.png" width=450> 
 
 <img src="/History/img/img161.png" width=300> 
 
