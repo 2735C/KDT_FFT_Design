@@ -1,6 +1,6 @@
 [Vivado Synthesis Error]
 
-<img src="/History/img/img156.png" width=500> 
+<img src="/History/img/img156.png" width=600> 
 
 위와 같은 코드에서, cnt값은 clk에 따라 순차적으로 증가하도록 설계하였다. <br>
 하지만, 합 연산 또는 곱 연산에서 cnt 값의 증가가 해당 posedge에 즉시 반영되지 않을 수 있기 때문에 Vivado에서는 이를 Synthesis 과정에서 오류로 분류하였다. <br>
