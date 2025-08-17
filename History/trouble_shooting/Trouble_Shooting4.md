@@ -1,7 +1,8 @@
 [Indexsum Problem]
 
 <img src="/History/img/img153.png" width=500> 
-<img src="/History/img/img154.png" width=500><img src="/History/img/img155.png" width=400> <br>
+
+<img src="/History/img/img154.png" width=500><img src="/History/img/img155.png" width=400>
 <img src="/History/img/img152.png" width=1000>
 
 CBFP에서 생성된 index 값은 바로 indexsum 모듈로 전달된다. 그러나 cbfp0와 cbfp1의 index 생성 시점이 달라 문제가 발생했다. 이를 해결하기 위해 cbfp0의 index는 먼저 받아 레지스터에 순서대로 저장해 두었고, cbfp1의 index가 생성되면 저장된 cbfp0 index와 함께 연산하도록 설계하였다. 즉, cbfp1의 valid_out(m2_valid) 신호를 indexsum 연산 시작 신호로 사용하였다. <br>
