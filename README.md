@@ -294,7 +294,7 @@ end
 
 <br>
 
-|<img src="/History/img/img85.png" width=1000>|
+|<img src="/History/img/img85.png" width=300>|
 --|
 
 
@@ -303,6 +303,11 @@ end
 : 부동소수점 대비 면적/전력 절감 + Precision trade-off 가능
 
 ➡️ **BFP**는 블록 단위로 **공통 스케일**을 사용하는 반면, **CBFP**는 **블록** 내 작은 값들의 여유 비트를 활용해 **Q-format을 조정**함으로써 **라운딩 오차를 줄이고 정밀도 향상**이 가능
+
+
+
+
+
 
 > ### :four: **LUT 사용**  
 
