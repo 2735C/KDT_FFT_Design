@@ -317,10 +317,16 @@ Timing_max| Area
 --|--|--
 |<div align = "middle">65538 (30%)| <div align = "middle"> 0.576 ns|<div align = "middle"> 89 clk|
 
-<img src="/History/img/img79.png" width=500> |<div align = "left"><div align = "left">- LUT 30% 사용 -> Combinational Logic ↑<br><br>- FF, DSP 약 10% -> 적정 Pipelining, Multiplier
+<img src="/History/img/img79.png" width=400> |<img src="/History/img/img84.png" width=400> |
 --|--
-<img src="/History/img/img80.png" width=500> |- **Setup Time & Hold Time Slack MET** |
 
+<img src="/History/img/img80.png" width=400> |<img src="/History/img/img82.png" width=200>|<img src="/History/img/img83.png" width=200>|
+--|--|--
+
+
+- LUT 30% 사용 -> Combinational Logic ↑
+- FF, DSP 약 10% -> 적정 Pipelining, Multiplier
+- Setup Time & Hold Time Slack MET 
 
 ## 진행 결과
 
