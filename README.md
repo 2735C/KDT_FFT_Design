@@ -294,7 +294,7 @@ end
 
 
 
-|<img src="/History/img/img85.png" width=1000>|
+|<img src="/History/img/img86.png" width=1000>|
 |--|
 
 
@@ -304,9 +304,53 @@ end
 
 ➡️ **BFP**는 블록 단위로 **공통 스케일**을 사용하는 반면, **CBFP**는 **블록** 내 작은 값들의 여유 비트를 활용해 **Q-format을 조정**함으로써 **라운딩 오차를 줄이고 정밀도 향상**이 가능
 
+> **CBFP Matlab(일부)**
+
+```matlab
+for ii=1:8
+  for jj=1:64
+	tmp1_re = mag_detect(real(pre_bfly02(64*(ii-1)+jj)), 23);
+	tmp1_im = mag_detect(imag(pre_bfly02(64*(ii-1)+jj)), 23);
+```
+
+* mag_detect: Twiddle factor 곱 이후의 복소수 FFT 결과를 이진수로 변환해 각 데이터가 MSB부터 부호 비트(0 or 1)가 얼마나 연속되는지 계산
+* 정규화 오버플로우 가능성을 고려해 CBFP 연산 직전에 부호 비트 추가
+
+```matlab
+	temp1_re = min_detect(jj, tmp1_re, cnt1_re(ii));
+	temp1_im = min_detect(jj, tmp1_im, cnt1_im(ii));
+```
+* min_detect: 64개의 데이터 중 mag_detect 결과가 가장 작은 값 선택
+* 각 블록(64개 단위)마다 최대한 안전하게 Shift 할 수 있는 폭을 계산해, 해당 비트 수만큼 전부 정규화(bit shift)한다.
+
+> **CBFP RTL(일부)**
 
 
+```systemverilog
+always_comb begin
+    lzc_re = count_min_lzc_23bit(din_re);
+    lzc_im = count_min_lzc_23bit(din_im);
+end
+always_ff @( posedge clk or negedge rstn ) begin
+    if (!rstn) begin
+        for (int i = 0; i < array_num; i=i+1) begin
+            cal_cnt[i] <= '0;
+        end
+    end else if (valid_in) begin
+        for (int i = array_num - 1; i > 0; i=i-1) begin
+            cal_cnt[i] <= cal_cnt[i-1];
+        end 
+        
+        cal_cnt[0] <= (lzc_re > lzc_im) ? lzc_im : lzc_re;
+    end else begin
+        for (int i = 0; i < array_num; i=i+1) begin
+            cal_cnt[i] <= cal_cnt[i];
+        end
+    end
+end
+```
 
+* **count_min_lzc_23bit** 함수로 16개 데이터의 **mag_detect를 계산**하며 **실시간**으로 **최솟값**을 구함 <br>→ 다음 연산 과정에서 비교 대상 데이터를 **64개에서 4개로** 줄여 Timing Margin 확보 
 
 
 > ### :four: **LUT 사용**  
