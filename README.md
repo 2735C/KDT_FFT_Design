@@ -313,9 +313,9 @@ Timing_max| Area
 
 ## (5) FPGA Targeting [[결과 분석]](/History/Progress_report/fpga.md)
 
-|LUT|Setup-time|Latency|
---|--|--
-|<div align = "middle">65538 (30%)| <div align = "middle"> 0.576 ns|<div align = "middle"> 89 clk|
+|LUT|Setup-time|Latency|power
+--|--|--|--|
+|<div align = "middle">65538 (30%)| <div align = "middle"> 0.576 ns|<div align = "middle"> 89 clk|<div align = "middle"> 1.74 W|
 
 <img src="/History/img/img79.png" width=400> |<img src="/History/img/img84.png" width=400> |
 --|--
