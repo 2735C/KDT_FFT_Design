@@ -294,8 +294,8 @@ end
 
 
 
-|<img src="/History/img/img85.png" width=300>|
---|
+|<img src="/History/img/img85.png" width=1000>|
+|--|
 
 
 > ### :three: **고정 소수점 사용**  
