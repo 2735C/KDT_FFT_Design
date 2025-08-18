@@ -292,7 +292,7 @@ end
 | **index\_cnt 범위** | 0\~3                       | 4\~7                       | 0\~3                       | 4\~7                       | 8\~11                      | 12\~15                     | 8\~11                      | 12\~15                     |
 | **데이터 <br>그룹**    | re\_p\[0:63], im\_p\[0:63] | re\_p\[0:63], im\_p\[0:63] | re\_n\[0:63], im\_n\[0:63] | re\_n\[0:63], im\_n\[0:63] | re\_p\[0:63], im\_p\[0:63] | re\_p\[0:63], im\_p\[0:63] | re\_n\[0:63], im\_n\[0:63] | re\_n\[0:63], im\_n\[0:63] |
 
-<br>
+
 
 |<img src="/History/img/img85.png" width=300>|
 --|
@@ -366,33 +366,33 @@ Timing_max| Area
       <td rowspan="3">ASIC (500MHz)</td>
       <td>RTL Simulation</td>
       <td>Cosine, Random Fixed Data</td>
-      <td style="text-align:center;">○</td>
+      <td align="center">○</td>
     </tr>
     <tr>
       <td>Synthesis</td>
       <td>Setup Violation, Area</td>
-      <td style="text-align:center;">○</td>
+      <td align="center">○</td>
     </tr>
     <tr>
       <td>Gate Simulation</td>
       <td>Cosine, Random Fixed Data</td>
-      <td style="text-align:center;">○</td>
+      <td align="center">○</td>
     </tr>
     <tr>
       <td rowspan="3">FPGA (100MHz)</td>
       <td>FPGA top Block</td>
       <td>Cosine generator, FFT, VIO</td>
-      <td style="text-align:center;">○</td>
+      <td align="center">○</td>
     </tr>
     <tr>
       <td>RTL Simulation</td>
       <td>Cosine Fixed Data</td>
-      <td style="text-align:center;">○</td>
+      <td align="center">○</td>
     </tr>
     <tr>
       <td>Synthesis & Implementation</td>
       <td>Setup Violation, Utilization, Bitstream</td>
-      <td style="text-align:center;">○</td>
+      <td align="center">○</td>
     </tr>
   </tbody>
 </table>
