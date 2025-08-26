@@ -359,12 +359,12 @@ end
 
 ### 😎 RTL Simulation
 
-### ✅ Cos_Input
+### ✅ Cosine_Input
 
 |<img src="/History/img/img88.png" width=1000>|
 |--|
 
-#### ➡️ [Matlab] Input Data
+#### ➡️ [Matlab] Firt 32 Input Data Points
 
 
 | Real | 63 | 64 | 64 | 64 | 64 | 64 | 64 | 64 | 64 | 64 | 64 | 63 | 63 | 63 | 63 | 63 | 63 | 63 | 62 | 62 | 62 | 62 | 62 | 61 | 61 | 61 | 61 | 61 | 60 | 60 | 60 | 59 | ··· |
@@ -375,7 +375,7 @@ end
 |<img src="/History/img/img89.png" width=1000>|
 |--|
 
-#### ➡️[Matlab] Input Data
+#### ➡️[Matlab] Last 32 Input Data Points
 
 
 | Real | ··· | 59 | 59 | 60 | 60 | 60 | 61 | 61 | 61 | 61 | 61 | 62 | 62 | 62 | 62 | 62 | 63 | 63 | 63 | 63 | 63 | 63 | 63 | 64 | 64 | 64 | 64 | 64 | 64 | 64 | 64 | 64 | 64 |
@@ -384,12 +384,12 @@ end
 
 
 
-### ✅ Cos_Output
+### ✅ Cosine_Output
 
 |<img src="/History/img/img90.png" width=1000>|
 |--|
 
-#### ➡️[Matlab] Output Data
+#### ➡️[Matlab] Fist 32 Output Data Points
 
 | Real | -1 | 4091 | -1 | 2 | -1 | 2 | -1 | -3 | -1 | -4 | -1 | -1 | -1 | 3 | -1 | 3 | -1 | -1 | -1 | -1 | -1 | -2 | -1 | 2 | -1 | -1 | -1 | -4 | -1 | -1 | -1 | 0 | ··· |
 |------|----|------|----|---|----|---|----|----|----|----|----|----|----|---|----|---|----|----|----|----|----|----|----|---|----|---|----|----|----|----|----|----|----|
@@ -400,7 +400,7 @@ end
 |<img src="/History/img/img91.png" width=1000>|
 |--|
 
-#### ➡️ [Matlab] Output Data
+#### ➡️ [Matlab] Last 32 Output Data Points
 
 
 | Real | ··· | -1 | 1 | -1 | -1 | -1 | -4 | -1 | -1 | -1 | -1 | -1 | -2 | -1 | -1 | -1 | -1 | -1 | 3 | -1 | 3 | -1 | -1 | -1 | -5 | -1 | 2 | -1 | 2 | -1 | 2 | -1 | 4091 |
@@ -409,13 +409,14 @@ end
 
 
 
-🎉 Matlab을 통해 예측한 결과와 같음을 확인할 수 있다. <br> FPGA와 연결하기 위해 Cosine Input을 8clk 쉬고 다시 반복하도록 설계하여 출력이 진행될 때도 Input Data가 입력되는 것을 확인할 수 있다.
+🎉 Matlab을 통해 예측한 결과와 같음을 확인할 수 있다. 
+☑️ FPGA와 연결하기 위해 Cosine Input을 8clk 쉬고 다시 반복하도록 설계하여 출력이 진행될 때도 Input Data가 입력되는 것을 확인할 수 있다.
 
 ## (3) Synthesis
 
-|Setup_time| Area|Latency
---|--|--
-|<div align = "middle"> 0.14 ps|<div align = "middle"> 187768.2| <div align = "middle"> 89 clk|
+|Setup_time| Area|
+--|--|
+|<div align = "middle"> 0.14 ps|<div align = "middle"> 187768.2|
 
 
 Timing_max| Area
@@ -426,7 +427,63 @@ Timing_max| Area
 
 ## (4) Gate Simulation [[결과 분석]](/History/Progress_report/gate.md)
 
+### 🔍 TestBench 
 
+### ✨ Vectorization / Flattening
+
+```systemverilog
+logic signed [0:143] din_re;
+logic signed [0:143] din_im;
+logic [0:207] dout_re;  
+logic [0:207] dout_im;
+```
+
+#### 🤔 다차원 배열을 1차원 벡터로 변환하는 것의 필요성
+
+:one: **게이트 시뮬레이션에서 배열 제한:** 
+- 일부 EDA 툴이나 합성된 netlist는 배열을 직접 시뮬레이션할 수 없음.
+ 
+:two: **배선 단순화:** 
+- 모든 요소를 하나의 연속된 vector로 바꾸면, 모듈 간 연결이 간단해짐.
+
+:three: **자동화 가능:** 
+- Testbench에서 반복문으로 배열을 채우던 로직을 벡터 슬라이스로 처리 가능.
+
+
+```systemverilog
+logic signed [8:0] din_re_arr [0:15];
+logic signed [8:0] din_im_arr [0:15];
+logic signed [12:0] dout_re_arr [0:15];
+logic signed [12:0] dout_im_arr [0:15];
+```
+
+- 사용자의 편의를 위해 RTL 배열를 추가하여 Waveform에서의 가독성을 높였다.
+
+### 😎 Gate Simulation
+
+#### Latency: 89clk
+
+|<img src="/History/img/img92.png" width=600>|
+|--|
+
+|<img src="/History/img/img93.png" width=500>|<img src="/History/img/img94.png" width=500>|
+|--|--|
+
+### ✅ Cosine_Input
+
+|<img src="/History/img/img95.png" width=1000>|
+|--|
+
+|<img src="/History/img/img96.png" width=1000>|
+|--|
+
+### ✅ Cosine_Output
+
+|<img src="/History/img/img97.png" width=1000>|
+|--|
+
+|<img src="/History/img/img98.png" width=1000>|
+|--|
 
 ## (5) FPGA Targeting [[결과 분석]](/History/Progress_report/fpga.md)
 
