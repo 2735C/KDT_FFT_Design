@@ -44,7 +44,7 @@
 
 CBFP 모델을 기반으로 **RTL 설계 및 합성**을 진행하고, 이를 통해 **setup time violation, Area, Latency** 등의 특성을 분석하였다. 마지막으로 **게이트 레벨 시뮬레이션**과 **FPGA Targeting**을 수행하여 RTL 설계의 기능적 타당성을 검증하였다.
 
-## 💻 개발 환경 <br>
+## 💻개발 환경 <br>
 
 - **모델링 및 알고리즘 설계**
   - MATLAB (Floating/Fixed-point 모델링 및 High-level verification)
@@ -85,7 +85,7 @@ CBFP 모델을 기반으로 **RTL 설계 및 합성**을 진행하고, 이를 �
 
 
 
-## 🔖 개발 과정
+## 🔖개발 과정
 > 빠른 요약을 원한다면 --> [[발표 자료]](/History/PPT/Team2_발표자료.pdf)
 
 ## (1) Fixed point modeling [[결과 분석]](/History/Progress_report/matlab.md)
