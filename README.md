@@ -117,6 +117,14 @@ CBFP 모델을 기반으로 **RTL 설계 및 합성**을 진행하고, 이를 �
 
 ##
 
+#### 📝 참고 문헌
+
+[1] S. He and M. Torkelson, "A new approach to pipeline FFT processor," in Proc. IEEE International Parallel Processing Symposium (IPPS), Honolulu, HI, USA, Apr. 1996, pp. 766–770, doi: 10.1109/IPPS.1996.508098.
+
+[2] Y. W. Lee, J. H. Lee, S. W. Kim, and C. Weems, "A fast single-chip implementation of 8192 complex point FFT," IEEE Journal of Solid-State Circuits, vol. 30, no. 4, pp. 413–422, Apr. 1995, doi: 10.1109/4.364645.
+
+##
+
 ### ✳️ 성능 향상
 
 <table style="border-collapse: collapse; border: 3px solid black;" cellpadding="5">
@@ -307,6 +315,7 @@ end
 > **CBFP Matlab(일부)**
 
 ```matlab
+% M0 CBFP
 for ii=1:8
   for jj=1:64
 	tmp1_re = mag_detect(real(pre_bfly02(64*(ii-1)+jj)), 23);
@@ -317,6 +326,7 @@ for ii=1:8
 * 정규화 오버플로우 가능성을 고려해 CBFP 연산 직전에 부호 비트 추가
 
 ```matlab
+% MO CBFP
 	temp1_re = min_detect(jj, tmp1_re, cnt1_re(ii));
 	temp1_im = min_detect(jj, tmp1_im, cnt1_im(ii));
 ```
@@ -327,6 +337,7 @@ for ii=1:8
 
 
 ```systemverilog
+// M0 CBFP 
 always_comb begin
     lzc_re = count_min_lzc_23bit(din_re);
     lzc_im = count_min_lzc_23bit(din_im);
