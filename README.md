@@ -5,8 +5,8 @@
 
 |                                                 **최윤석**                                                 |                                                                                                                             **배상원**                                                                                                                              |                                                                        **윤의빈**                                                                        |                                                                                                                             **정은지**                                                                                                                              |
 | :--------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-|                                                Team Leader                                                 |                                                                                                                            Team member 1                                                                                                                             |                                                                  Team member 2                                                                   |                                                                                                                         Team member 3                                                                                                                        |
-| [<img src="/History/img/profile_1.png" width=150 > </br> @최윤석](https://github.com/stockfail) | [<img src="/History/img/profile_2.jpg" width=150 > </br> @Bae Sangwon](https://github.com/BAESANGWON1) | [<img src="/History/img/profile_3.jpg" width=150 > </br> @Yun UiBin](https://github.com/demic2da) | [<img src="/History/img/profile_4_v2.jpg" width=150 > </br> @Jung Eunji](https://github.com/2735C) |
+|                                                Team Leader                                                 |                                                                                                                            Algorithm Designer                                                                                                                             |                                                                  RTL Design Engineer                                                                   |                                                                                                                         FPGA-HW Engineer                                                                                                                        |
+| [<img src="/History/img/profile_1.png" width=150 > </br> @Choi YunSeok](https://github.com/stockfail) | [<img src="/History/img/profile_2.jpg" width=150 > </br> @Bae SangWon](https://github.com/BAESANGWON1) | [<img src="/History/img/profile_3.jpg" width=150 > </br> @Yun UiBin](https://github.com/demic2da) | [<img src="/History/img/profile_4_v2.jpg" width=150 > </br> @Jung EunJi](https://github.com/2735C) |
 
 ## 🖊️Role
 
@@ -24,6 +24,7 @@
 
 
 ### 🐻윤의빈
+- DSP Algorithm Analysis
 - BFP-based FFT Fixed point modeling
 - Butterfly Calculation Module & Bit reverse RTL Desgin 
 - Gate simulation & Debugging
@@ -32,6 +33,7 @@
 
 
 ### 🐤정은지 
+- DSP Algorithm Analysis
 - BFP-based FFT Fixed point modeling
 - CBFP Module RTL Desgin 
 - Gate simulation & Debugging
